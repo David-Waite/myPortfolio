@@ -55,7 +55,8 @@
     padding-left: 30px;
     padding-right: 70px;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 100px;
+    height: 90vh;
     background: rgb(58, 184, 255);
     background: linear-gradient(
       -10deg,
@@ -63,10 +64,6 @@
       rgba(44, 44, 44, 1) 50%
     );
   }
-  .aboutMe {
-    justify-content: flex-start;
-  }
-
   .about h2 {
     font-size: 30px;
     line-height: 30px;

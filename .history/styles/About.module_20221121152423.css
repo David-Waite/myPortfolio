@@ -55,7 +55,7 @@
     padding-left: 30px;
     padding-right: 70px;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 100px;
     background: rgb(58, 184, 255);
     background: linear-gradient(
       -10deg,
@@ -64,6 +64,8 @@
     );
   }
   .aboutMe {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
   }
 
