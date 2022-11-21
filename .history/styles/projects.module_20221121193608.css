@@ -95,7 +95,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .projectsCard h3 {
-    max-width: calc(50vw - 100px);
+    max-width: calc(50vw - 80px);
   }
   .projectImages {
     max-width: 200px;
@@ -103,11 +103,6 @@
   }
 }
 
-@media (max-width: 800px) {
-  .projectsGrid {
-    gap: 20px;
-  }
-}
 @media (max-width: 575px) {
   .project {
     padding-left: 30px;

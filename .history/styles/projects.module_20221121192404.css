@@ -44,7 +44,6 @@
   color: white;
   font-size: 16px;
   font-weight: 300;
-  max-width: calc(33.33vw - 80px);
 }
 
 .projectInfo {
@@ -78,36 +77,23 @@
   background-color: #3ab8ff;
 }
 @media (max-width: 1200px) {
-  .project {
-    padding: 0 70px 0 30px;
-  }
-  .projectsGrid {
-    gap: 15px;
+  .container {
+    padding: 0 100px 0 30px;
   }
 }
 
 @media (max-width: 1000px) {
-  .project h2 {
-    font-size: 40px;
+  .home h1 {
+    font-size: 60px;
   }
-  .projectsGrid {
-    gap: 30px;
-    grid-template-columns: 1fr 1fr;
+  .home h2 {
+    font-size: 35px;
   }
-  .projectsCard h3 {
-    max-width: calc(50vw - 100px);
-  }
-  .projectImages {
-    max-width: 200px;
-    margin: 0 auto;
+  .home img {
+    width: 290px;
   }
 }
 
-@media (max-width: 800px) {
-  .projectsGrid {
-    gap: 20px;
-  }
-}
 @media (max-width: 575px) {
   .project {
     padding-left: 30px;

@@ -102,7 +102,18 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 825px) {
+  .home h1 {
+    font-size: 50px;
+  }
+  .home h2 {
+    font-size: 25px;
+  }
+  .home img {
+    width: 250px;
+  }
+}
+@media (max-width: 575px) {
   .contact {
     padding-left: 30px;
     padding-right: 70px;

@@ -44,7 +44,7 @@
   color: white;
   font-size: 16px;
   font-weight: 300;
-  max-width: calc(33.33vw - 80px);
+  max-width: calc(33.33vw - 650px);
 }
 
 .projectInfo {
@@ -79,10 +79,7 @@
 }
 @media (max-width: 1200px) {
   .project {
-    padding: 0 70px 0 30px;
-  }
-  .projectsGrid {
-    gap: 15px;
+    padding: 0 100px 0 30px;
   }
 }
 
@@ -90,24 +87,8 @@
   .project h2 {
     font-size: 40px;
   }
-  .projectsGrid {
-    gap: 30px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .projectsCard h3 {
-    max-width: calc(50vw - 100px);
-  }
-  .projectImages {
-    max-width: 200px;
-    margin: 0 auto;
-  }
 }
 
-@media (max-width: 800px) {
-  .projectsGrid {
-    gap: 20px;
-  }
-}
 @media (max-width: 575px) {
   .project {
     padding-left: 30px;
