@@ -108,7 +108,7 @@
     font-weight: 300;
   }
   .form input {
-    width: calc(100% - 10px);
+    width: 100%;
   }
 
   .form textarea {

@@ -48,6 +48,7 @@
 .form input,
 .form textarea {
   padding: 3px 5px;
+
   font-size: 20px;
   font-weight: 300;
 }
@@ -107,16 +108,12 @@
     font-size: 16px;
     font-weight: 300;
   }
-  .form input {
-    width: calc(100% - 10px);
-  }
 
   .form textarea {
     height: 200px;
-    width: calc(100% - 10px);
   }
   .form button {
-    font-size: 16px;
+    font-size: 14px;
 
     margin-right: auto;
   }

@@ -7,6 +7,7 @@ export default function About() {
       style={{ backgroundImage: "url('/background.png'" }}
     >
       <div className={styles.about}>
+        <div></div>
         <div className={styles.aboutMe}>
           <h2>About me</h2>
           <p>
@@ -19,8 +20,6 @@ export default function About() {
             2023.
           </p>
         </div>
-        <div className={styles.aboutFiller}></div>
-        <div className={styles.aboutFiller}></div>
         <div className={styles.aboutTech}>
           <h2>
             Technology&apos;s

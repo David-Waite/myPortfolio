@@ -107,13 +107,9 @@
     font-size: 16px;
     font-weight: 300;
   }
-  .form input {
-    width: calc(100% - 10px);
-  }
 
   .form textarea {
     height: 200px;
-    width: calc(100% - 10px);
   }
   .form button {
     font-size: 16px;

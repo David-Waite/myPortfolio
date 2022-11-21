@@ -16,7 +16,9 @@
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  grid-template-areas:
+    "aboutMe none"
+    "none aboutTech";
   gap: 100px 0;
   height: 100vh;
   max-width: 1000px;
@@ -26,11 +28,11 @@
 }
 
 .aboutMe {
+  grid-area: aboutMe;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-
 .about h2 {
   font-size: 50px;
   color: #ffffff;
@@ -53,9 +55,6 @@
 }
 
 @media (max-width: 575px) {
-  .aboutFiller {
-    display: none;
-  }
   .about {
     padding-left: 30px;
     padding-right: 70px;
@@ -90,9 +89,9 @@
     margin-bottom: 20px;
   }
   .aboutTech {
-    margin-top: 160px;
+    margin-top: 150px;
   }
   .techCon {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }

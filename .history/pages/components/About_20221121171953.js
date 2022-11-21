@@ -20,7 +20,7 @@ export default function About() {
           </p>
         </div>
         <div className={styles.aboutFiller}></div>
-        <div className={styles.aboutFiller}></div>
+        <div></div>
         <div className={styles.aboutTech}>
           <h2>
             Technology&apos;s
