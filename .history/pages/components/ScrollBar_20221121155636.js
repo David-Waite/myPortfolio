@@ -10,7 +10,7 @@ import {
 export default function ScrollBar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
-    const position = window.scrollY;
+    const position = window.pageYOffset;
     setScrollPosition(position);
   };
 
@@ -30,17 +30,6 @@ export default function ScrollBar() {
   React.useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth);
-    });
-  }, []);
-  const [height, setHeight] = React.useState(999);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setHeight(window.innerHeight), 1;
-    });
-  });
-  React.useEffect(() => {
-    window.addEventListener("resize", () => {
-      setHeight(window.innerHeight);
     });
   }, []);
 
@@ -67,14 +56,14 @@ export default function ScrollBar() {
         </a>
       </>
     );
-
+  console.log(scrollPosition);
   return (
     <div className={styles.scrollBar}>
       <div className={styles.container}>
         <div className={styles.linksContainer}>
           <div
             className={styles.scrollBall}
-            style={{ top: (scrollPosition / height) * 75 + 20 }}
+            style={{ top: scrollPosition / 10.7 + 20 }}
           ></div>
 
           {navText}

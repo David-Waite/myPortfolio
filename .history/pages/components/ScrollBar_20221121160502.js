@@ -32,17 +32,6 @@ export default function ScrollBar() {
       setWidth(window.innerWidth);
     });
   }, []);
-  const [height, setHeight] = React.useState(999);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setHeight(window.innerHeight), 1;
-    });
-  });
-  React.useEffect(() => {
-    window.addEventListener("resize", () => {
-      setHeight(window.innerHeight);
-    });
-  }, []);
 
   const navText =
     width > 575 ? (
@@ -67,14 +56,14 @@ export default function ScrollBar() {
         </a>
       </>
     );
-
+  console.log((scrollPosition / 1000) * 100);
   return (
     <div className={styles.scrollBar}>
       <div className={styles.container}>
         <div className={styles.linksContainer}>
           <div
             className={styles.scrollBall}
-            style={{ top: (scrollPosition / height) * 75 + 20 }}
+            style={{ top: (scrollPosition / 100vw) * 75 + 20 }}
           ></div>
 
           {navText}

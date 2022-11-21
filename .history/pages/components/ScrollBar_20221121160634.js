@@ -44,6 +44,8 @@ export default function ScrollBar() {
     });
   }, []);
 
+  console.log(height);
+
   const navText =
     width > 575 ? (
       <>
@@ -67,7 +69,7 @@ export default function ScrollBar() {
         </a>
       </>
     );
-
+  console.log((scrollPosition / 1000) * 100);
   return (
     <div className={styles.scrollBar}>
       <div className={styles.container}>

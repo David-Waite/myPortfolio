@@ -44,6 +44,8 @@ export default function ScrollBar() {
     });
   }, []);
 
+  console.log(height);
+
   const navText =
     width > 575 ? (
       <>
