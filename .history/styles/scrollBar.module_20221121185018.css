@@ -38,3 +38,12 @@
   color: #2c2c2c;
   font-size: 18px;
 }
+
+@media (max-width: 3000px) {
+  .container {
+    width: 40px;
+    right: 15px;
+    height: 250px;
+    padding: 15px 0;
+  }
+}

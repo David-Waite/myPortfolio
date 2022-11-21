@@ -23,9 +23,9 @@ export default function About() {
         <div className={styles.aboutFiller}></div>
         <div className={styles.aboutTech}>
           <h2>
-            Tech
+            Tech I&apos;m
             <br />
-            <strong>I&apos;m comfortable in</strong>
+            <strong>comfortable in</strong>
           </h2>
           <div className={styles.techCon}>
             <img src="/JsIcon.png" alt="" />

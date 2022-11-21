@@ -76,9 +76,6 @@
 }
 
 @media (max-width: 700px) {
-  .container {
-    padding: 0;
-  }
   .aboutFiller {
     display: none;
   }
@@ -116,7 +113,7 @@
     margin-bottom: 20px;
   }
   .aboutTech {
-    margin-top: 180px;
+    margin-top: 160px;
   }
   .techCon {
     margin-top: 20px;

@@ -58,23 +58,14 @@
 
 @media (max-width: 1000px) {
   .home h1 {
-    font-size: 60px;
+    font-size: 55px;
   }
   .home h2 {
-    font-size: 35px;
-  }
-  .home img {
-    width: 290px;
+    font-size: 30px;
   }
 }
 
-@media (max-width: 825px) {
-  .home h1 {
-    font-size: 50px;
-  }
-  .home h2 {
-    font-size: 25px;
-  }
+@media (max-width: 1000px) {
   .home img {
     width: 250px;
   }

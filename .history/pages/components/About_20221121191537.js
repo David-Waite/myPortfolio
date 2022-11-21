@@ -23,7 +23,7 @@ export default function About() {
         <div className={styles.aboutFiller}></div>
         <div className={styles.aboutTech}>
           <h2>
-            Tech
+            Tech I&apos;m
             <br />
             <strong>I&apos;m comfortable in</strong>
           </h2>

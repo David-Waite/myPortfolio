@@ -44,6 +44,33 @@ export default function ScrollBar() {
     });
   }, []);
 
+  const navText =
+    width > 575 ? (
+      <>
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>PROJECTS</a>
+        <a>CONTACT</a>
+      </>
+    ) : (
+      <>
+        <a>
+          <HouseFill />
+        </a>
+        <a>
+          <FilePersonFill />
+        </a>
+        <a>
+          <LaptopFill />
+        </a>
+        <a>
+          <EnvelopeFill />
+        </a>
+      </>
+    );
+  const scrollBallTop =
+    width > 575 ? scrollPosition : (scrollPosition / height) * 75 + 20;
+
   return (
     <div className={styles.scrollBar}>
       <div className={styles.container}>
@@ -53,18 +80,7 @@ export default function ScrollBar() {
             style={{ top: (scrollPosition / height) * 75 + 20 }}
           ></div>
 
-          <a>
-            <HouseFill />
-          </a>
-          <a>
-            <FilePersonFill />
-          </a>
-          <a>
-            <LaptopFill />
-          </a>
-          <a>
-            <EnvelopeFill />
-          </a>
+          {navText}
         </div>
       </div>
     </div>

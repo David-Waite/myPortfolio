@@ -50,7 +50,7 @@ export default function ScrollBar() {
         <div className={styles.linksContainer}>
           <div
             className={styles.scrollBall}
-            style={{ top: (scrollPosition / height) * 75 + 20 }}
+            style={{ top: (scrollPosition / height) * 75 + 20; }}
           ></div>
 
           <a>

@@ -60,25 +60,14 @@
     padding: 0 100px 0 30px;
   }
   .aboutTech {
-    padding-left: 20px;
-  }
-}
-@media (max-width: 1000px) {
-  .about h2 {
-    font-size: 40px;
+    padding-left: 80px;
   }
   .about h2 strong {
     font-size: 24px;
   }
-  .about img {
-    height: 40px;
-  }
 }
 
-@media (max-width: 700px) {
-  .container {
-    padding: 0;
-  }
+@media (max-width: 575px) {
   .aboutFiller {
     display: none;
   }
@@ -116,7 +105,7 @@
     margin-bottom: 20px;
   }
   .aboutTech {
-    margin-top: 180px;
+    margin-top: 160px;
   }
   .techCon {
     margin-top: 20px;

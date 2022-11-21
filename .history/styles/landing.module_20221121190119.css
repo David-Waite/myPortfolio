@@ -64,7 +64,7 @@
     font-size: 35px;
   }
   .home img {
-    width: 290px;
+    width: 280px;
   }
 }
 
@@ -73,10 +73,10 @@
     font-size: 50px;
   }
   .home h2 {
-    font-size: 25px;
+    font-size: 30px;
   }
   .home img {
-    width: 250px;
+    width: 200px;
   }
 }
 @media (max-width: 700px) {

@@ -63,9 +63,6 @@
   .home h2 {
     font-size: 35px;
   }
-  .home img {
-    width: 290px;
-  }
 }
 
 @media (max-width: 825px) {
@@ -73,10 +70,10 @@
     font-size: 50px;
   }
   .home h2 {
-    font-size: 25px;
+    font-size: 30px;
   }
   .home img {
-    width: 250px;
+    width: 230px;
   }
 }
 @media (max-width: 700px) {

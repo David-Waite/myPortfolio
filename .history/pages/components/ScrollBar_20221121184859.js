@@ -44,13 +44,18 @@ export default function ScrollBar() {
     });
   }, []);
 
+  const scrollBallTop =
+    width > 3000
+      ? (scrollPosition / height) * 160.5 + 52
+      : (scrollPosition / height) * 75 + 20;
+
   return (
     <div className={styles.scrollBar}>
       <div className={styles.container}>
         <div className={styles.linksContainer}>
           <div
             className={styles.scrollBall}
-            style={{ top: (scrollPosition / height) * 75 + 20 }}
+            style={{ top: scrollBallTop }}
           ></div>
 
           <a>
