@@ -47,7 +47,6 @@ export default function ScrollBar() {
   const navText =
     width > 575 ? (
       <>
-        <a>HOME</a>
         <a>ABOUT</a>
         <a>PROJECTS</a>
         <a>CONTACT</a>

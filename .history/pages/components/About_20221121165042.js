@@ -27,11 +27,8 @@ export default function About() {
             <strong>I&apos;m comfortable in</strong>
           </h2>
           <div className={styles.techCon}>
-            <img src="/JsIcon.png" alt="" />
-            <br />
             <img src="/React-icon.png" alt="" />
             <img src="/nextJsIcon.png" alt="" />
-            <br />
             <img src="/contentfulIcon.png" alt="" />
           </div>
         </div>

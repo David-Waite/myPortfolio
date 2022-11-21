@@ -31,7 +31,6 @@ export default function About() {
             <br />
             <img src="/React-icon.png" alt="" />
             <img src="/nextJsIcon.png" alt="" />
-            <br />
             <img src="/contentfulIcon.png" alt="" />
           </div>
         </div>

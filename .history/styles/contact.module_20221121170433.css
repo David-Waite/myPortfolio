@@ -13,7 +13,7 @@
   color: #ffffff;
   font-weight: 200;
   line-height: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 .form {
   display: flex;
@@ -89,7 +89,6 @@
   .contact {
     padding-left: 30px;
     padding-right: 70px;
-    display: flex;
   }
 
   .contact h2 {
@@ -107,10 +106,6 @@
     margin-bottom: 7px;
     font-size: 16px;
     font-weight: 300;
-  }
-
-  .form textarea {
-    height: 200px;
   }
   .form button {
     margin-right: auto;

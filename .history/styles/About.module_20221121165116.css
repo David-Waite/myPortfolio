@@ -81,11 +81,8 @@
 
   .techCon img {
     height: 40px;
-    margin-right: 20px;
+    margin-right: 0;
     margin-bottom: 20px;
-  }
-  .aboutTech {
-    margin-top: 150px;
   }
   .techCon {
     margin-top: 50px;

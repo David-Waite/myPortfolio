@@ -93,19 +93,9 @@
   .projectsCard {
     height: calc(50vw / 16 * 7);
   }
-  .projectInfo h3 {
-    margin-top: 5px;
-    font-size: 10px;
-    max-width: calc(50vw - 65px);
-  }
-  .projectInfo button {
-    font-size: 10px;
-    padding: 2px 0;
-    width: 85px;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .projectsGrid {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -114,14 +104,8 @@
     height: calc(100vw / 16 * 6.5);
   }
   .projectInfo h3 {
-    font-size: 16px;
     margin-top: 5px;
     max-width: calc(100vw - 120px);
-  }
-  .projectInfo button {
-    font-size: 16px;
-    width: 125px;
-    padding: 2.5px 0;
   }
 }
 

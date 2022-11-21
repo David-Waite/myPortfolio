@@ -118,11 +118,6 @@
     margin-top: 5px;
     max-width: calc(100vw - 120px);
   }
-  .projectInfo button {
-    font-size: 16px;
-    width: 125px;
-    padding: 2.5px 0;
-  }
 }
 
 @media (max-width: 400px) {

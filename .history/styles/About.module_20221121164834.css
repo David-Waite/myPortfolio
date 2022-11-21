@@ -80,14 +80,10 @@
   }
 
   .techCon img {
-    height: 40px;
+    height: 30px;
     margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  .aboutTech {
-    margin-top: 150px;
-  }
-  .techCon {
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 }

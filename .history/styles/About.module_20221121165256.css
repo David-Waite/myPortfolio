@@ -85,9 +85,15 @@
     margin-bottom: 20px;
   }
   .aboutTech {
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .techCon {
     margin-top: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .about p {
+    font-size: 10px;
   }
 }
