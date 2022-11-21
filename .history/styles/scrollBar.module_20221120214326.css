@@ -1,0 +1,8 @@
+.container {
+  background-color: #3ab8ff;
+  height: 600px;
+}
+
+.scrollBar {
+  position: relative;
+}

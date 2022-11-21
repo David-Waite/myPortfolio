@@ -1,0 +1,27 @@
+.container {
+  background-color: green;
+  height: calc(60vh - 100px);
+  width: 110px;
+  border-radius: 55px;
+  position: fixed;
+  top: 20%;
+  right: 30px;
+
+  padding: 50px 0;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+.scrollBall {
+  position: absolute;
+  background-color: #3ab8ff;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  top: 50px;
+}

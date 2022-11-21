@@ -1,0 +1,7 @@
+.Container {
+  height: 600px;
+  width: 100px;
+  position: sticky;
+  left: 0;
+  background-color: #3ab8ff;
+}

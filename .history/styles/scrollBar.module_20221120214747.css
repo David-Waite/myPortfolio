@@ -1,0 +1,7 @@
+.container {
+  background-color: #3ab8ff;
+  height: 600px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

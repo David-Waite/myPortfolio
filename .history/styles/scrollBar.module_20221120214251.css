@@ -1,0 +1,9 @@
+.container {
+  background-color: #3ab8ff;
+  height: 600px;
+}
+
+.container div {
+  position: sticky;
+  top: 200px;
+}

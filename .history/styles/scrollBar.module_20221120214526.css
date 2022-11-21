@@ -1,0 +1,12 @@
+.scrollBar {
+  position: relative;
+  height: auto;
+  background-color: green;
+}
+
+.container {
+  background-color: #3ab8ff;
+  height: 600px;
+  position: sticky;
+  top: 20px;
+}
