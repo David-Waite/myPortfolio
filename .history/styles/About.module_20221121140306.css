@@ -1,0 +1,56 @@
+.techCon img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  background-size: 101vw 100vh;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  margin-bottom: -4px;
+}
+
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.about h2 {
+  font-size: 50px;
+  color: #ffffff;
+  font-weight: 200;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.about h2 strong {
+  margin-left: 11px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.about p {
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 1400px) {
+  .aboutMe {
+    padding-left: 0 200px 0 40px;
+  }
+}
