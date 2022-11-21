@@ -1,11 +1,6 @@
 import styles from "../../styles/scrollBar.module.css";
 import React, { useState, useEffect } from "react";
-import {
-  HouseFill,
-  FilePersonFill,
-  LaptopFill,
-  EnvelopeFill,
-} from "react-bootstrap-icons";
+import { HouseFill, FilePersonFill, LaptopFill } from "react-bootstrap-icons";
 
 export default function ScrollBar() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -48,12 +43,6 @@ export default function ScrollBar() {
         <a>
           <FilePersonFill />
         </a>
-        <a>
-          <LaptopFill />
-        </a>
-        <a>
-          <EnvelopeFill />
-        </a>
       </>
     );
 
@@ -63,7 +52,7 @@ export default function ScrollBar() {
         <div className={styles.linksContainer}>
           <div
             className={styles.scrollBall}
-            style={{ top: scrollPosition / 10.7 + 20 }}
+            style={{ top: scrollPosition / 6.45 + 55 }}
           ></div>
 
           {navText}

@@ -40,13 +40,12 @@
 @media (max-width: 575px) {
   .container {
     width: 40px;
-    right: 15px;
+    right: 20px;
     height: 250px;
     padding: 15px 0;
   }
   .linksContainer > * {
     color: #2c2c2c;
-    font-size: 18px;
   }
   .scrollBall {
     height: 10px;
