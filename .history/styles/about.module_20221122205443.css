@@ -20,22 +20,10 @@
   background-repeat: no-repeat;
   background-position-x: left;
 }
-.hideScrollBarContainer {
+.hideScrollBar {
   width: 60px;
-  height: 149.55vh;
-
-  position: absolute;
-  top: 150vh;
-  right: 0;
-}
-.hideScrollBarParent {
-  width: 60px;
-  height: 149.55vh;
-
-  position: absolute;
-
-  clip: rect(0, auto, auto, 0);
-  right: 0;
+  height: 100vh;
+  background-color: green;
 }
 .about {
   display: grid;

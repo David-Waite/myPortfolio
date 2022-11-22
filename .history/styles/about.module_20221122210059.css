@@ -23,7 +23,7 @@
 .hideScrollBarContainer {
   width: 60px;
   height: 149.55vh;
-
+  background-color: green;
   position: absolute;
   top: 150vh;
   right: 0;
@@ -31,10 +31,9 @@
 .hideScrollBarParent {
   width: 60px;
   height: 149.55vh;
-
+  background-color: green;
   position: absolute;
 
-  clip: rect(0, auto, auto, 0);
   right: 0;
 }
 .about {

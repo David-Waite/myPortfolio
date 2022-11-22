@@ -23,10 +23,14 @@ export async function getStaticProps() {
 export default function index({ projects }) {
   return (
     <div>
-      <Landing />
-      <About />
-      <Projects projects={projects} />
-      <Contact />
+      <div>
+        {" "}
+        <Landing />
+        <About />
+        <Projects projects={projects} />
+        <Contact />
+      </div>
+      <ScrollBar />
     </div>
   );
 }

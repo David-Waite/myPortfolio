@@ -1,13 +1,10 @@
 import styles from "../styles/about.module.css";
-import ScrollBar from "./ScrollBar";
 
 export default function About() {
   return (
     <div className={styles.container}>
       <div className={styles.hideScrollBarContainer}>
-        <div className={styles.hideScrollBarParent}>
-          <ScrollBar style="dark" />
-        </div>
+        <div className={styles.hideScrollBarParent}></div>
       </div>
       <div className={styles.about}>
         <div className={styles.aboutMe}>

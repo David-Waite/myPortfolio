@@ -4,7 +4,7 @@ import ScrollBar from "./ScrollBar";
 export default function Landing() {
   return (
     <div className={styles.container}>
-      <ScrollBar style="light" />
+      <ScrollBar />
       <div className={styles.home}>
         <div>
           <h1>

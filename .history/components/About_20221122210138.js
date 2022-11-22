@@ -6,7 +6,7 @@ export default function About() {
     <div className={styles.container}>
       <div className={styles.hideScrollBarContainer}>
         <div className={styles.hideScrollBarParent}>
-          <ScrollBar style="dark" />
+          <ScrollBar />
         </div>
       </div>
       <div className={styles.about}>

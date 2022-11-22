@@ -22,11 +22,20 @@ export async function getStaticProps() {
 
 export default function index({ projects }) {
   return (
-    <div>
-      <Landing />
-      <About />
-      <Projects projects={projects} />
-      <Contact />
+    <div className="container">
+      <div>
+        <Landing />
+        <About />
+        <Projects projects={projects} />
+        <Contact />
+      </div>
+      <ScrollBar />
+      <style jsx>{`
+        .container {
+          display: grid;
+          grid-template-columns: 1fr 70px;
+        }
+      `}</style>
     </div>
   );
 }
