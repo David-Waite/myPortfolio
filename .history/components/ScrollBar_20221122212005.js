@@ -44,12 +44,32 @@ export default function ScrollBar(props) {
     });
   }, []);
 
-  function scroll(position) {
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  }
+  const ScrollToTop = () => {
+    const [showTopBtn, setShowTopBtn] = useState(false);
+    useEffect(() => {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          setShowTopBtn(true);
+        } else {
+          setShowTopBtn(false);
+        }
+      });
+    }, []);
+    const goToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+    return (
+      <div className="top-to-btm">
+        {" "}
+        {showTopBtn && (
+          <FaAngleUp className="icon-position icon-style" onClick={goToTop} />
+        )}{" "}
+      </div>
+    );
+  };
 
   return (
     <div className={styles.scrollBar}>
@@ -70,7 +90,7 @@ export default function ScrollBar(props) {
 
           <a>
             <HouseFill
-              onClick={() => scroll(0)}
+              onClick={scrollTo}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -78,7 +98,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <FilePersonFill
-              onClick={() => scroll(height)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -86,7 +105,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <LaptopFill
-              onClick={() => scroll(height * 2)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -94,7 +112,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <EnvelopeFill
-              onClick={() => scroll(height * 3)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}

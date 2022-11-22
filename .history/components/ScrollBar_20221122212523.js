@@ -86,7 +86,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <LaptopFill
-              onClick={() => scroll(height * 2)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -94,7 +93,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <EnvelopeFill
-              onClick={() => scroll(height * 3)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}

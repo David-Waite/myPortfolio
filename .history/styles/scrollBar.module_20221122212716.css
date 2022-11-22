@@ -26,6 +26,7 @@
   width: 10px;
   border-radius: 50%;
   top: 50px;
+  z-index: -1;
 }
 
 .active {

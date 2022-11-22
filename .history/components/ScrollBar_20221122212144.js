@@ -44,12 +44,7 @@ export default function ScrollBar(props) {
     });
   }, []);
 
-  function scroll(position) {
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  }
+  
 
   return (
     <div className={styles.scrollBar}>
@@ -70,7 +65,7 @@ export default function ScrollBar(props) {
 
           <a>
             <HouseFill
-              onClick={() => scroll(0)}
+              onClick={}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -78,7 +73,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <FilePersonFill
-              onClick={() => scroll(height)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -86,7 +80,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <LaptopFill
-              onClick={() => scroll(height * 2)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -94,7 +87,6 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <EnvelopeFill
-              onClick={() => scroll(height * 3)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
