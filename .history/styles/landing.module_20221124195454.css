@@ -176,6 +176,7 @@
   }
   .home img {
     width: calc(100% - 15px);
+    margin-bottom: 70px;
   }
   .home h1 {
     font-size: 48px;
@@ -183,9 +184,5 @@
   .home h2 {
     font-size: 22px;
     margin-bottom: 30px;
-  }
-  .circleCon,
-  .arrow {
-    display: none;
   }
 }
