@@ -45,12 +45,10 @@ export default function ScrollBar(props) {
   }, []);
 
   function scroll(position) {
-    if (width > 700) {
-      window.scrollTo({
-        top: position,
-        behavior: "smooth",
-      });
-    }
+    window.scrollTo({
+      top: position,
+      behavior: "smooth",
+    });
   }
 
   return (

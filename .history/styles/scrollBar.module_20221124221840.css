@@ -41,7 +41,4 @@
 }
 
 @media (max-width: 700px) {
-  .linksContainer > * {
-    cursor: context-menu;
-  }
 }
