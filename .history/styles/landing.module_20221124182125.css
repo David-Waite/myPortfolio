@@ -15,20 +15,20 @@
   position: absolute;
   bottom: 70px;
   left: calc(50vw - 30px);
-  cursor: pointer;
 }
 
+.arrow span {
+  width: 50px;
+  height: 50px;
+  background-color: yellowgreen;
+}
 .circle {
-  r: 0;
-  transition: 0.35s ease-out;
+  transition: 0.3s;
 }
 
 .arrow:hover .circle {
-  r: 45;
-}
-
-.arrow:hover .arrowPath {
-  stroke: #2c2c2c;
+  transform: scale(0.1);
+  transform: translateY(100%);
 }
 
 .midArrow {
@@ -48,7 +48,7 @@
     opacity: 100%;
   }
 
-  50% {
+  60% {
     transform: translateY(20%);
     opacity: 0;
   }
@@ -169,11 +169,5 @@
   .home h2 {
     font-size: 22px;
     margin-bottom: 30px;
-  }
-}
-
-@media (max-height: 750px) {
-  .arrow {
-    bottom: 30px;
   }
 }

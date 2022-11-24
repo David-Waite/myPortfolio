@@ -30,7 +30,7 @@ export default function Landing() {
 
         <img src="/DavidWaitePP.jpg" alt="" />
         <svg
-          onClick={() => scroll(height)}
+          onClick={() => scroll(height * 3)}
           className={styles.arrow}
           width="60"
           height="60"

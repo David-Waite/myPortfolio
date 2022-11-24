@@ -1,6 +1,5 @@
 import styles from "../styles/landing.module.css";
 import ScrollBar from "./ScrollBar";
-import React, { useState, useEffect } from "react";
 
 export default function Landing() {
   function scroll(position) {
@@ -9,12 +8,6 @@ export default function Landing() {
       behavior: "smooth",
     });
   }
-  const [height, setHeight] = React.useState(999);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setHeight(window.innerHeight), 1;
-    });
-  });
   return (
     <div className={styles.container}>
       <ScrollBar style="light" />
@@ -30,7 +23,7 @@ export default function Landing() {
 
         <img src="/DavidWaitePP.jpg" alt="" />
         <svg
-          onClick={() => scroll(height)}
+          onClick={() => scroll(height * 3)}
           className={styles.arrow}
           width="60"
           height="60"

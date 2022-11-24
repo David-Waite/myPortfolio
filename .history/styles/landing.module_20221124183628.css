@@ -48,7 +48,7 @@
     opacity: 100%;
   }
 
-  50% {
+  60% {
     transform: translateY(20%);
     opacity: 0;
   }
@@ -169,11 +169,5 @@
   .home h2 {
     font-size: 22px;
     margin-bottom: 30px;
-  }
-}
-
-@media (max-height: 750px) {
-  .arrow {
-    bottom: 30px;
   }
 }

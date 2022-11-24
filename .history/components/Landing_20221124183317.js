@@ -1,20 +1,7 @@
 import styles from "../styles/landing.module.css";
 import ScrollBar from "./ScrollBar";
-import React, { useState, useEffect } from "react";
 
 export default function Landing() {
-  function scroll(position) {
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  }
-  const [height, setHeight] = React.useState(999);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setHeight(window.innerHeight), 1;
-    });
-  });
   return (
     <div className={styles.container}>
       <ScrollBar style="light" />
@@ -30,7 +17,6 @@ export default function Landing() {
 
         <img src="/DavidWaitePP.jpg" alt="" />
         <svg
-          onClick={() => scroll(height)}
           className={styles.arrow}
           width="60"
           height="60"
@@ -79,6 +65,40 @@ export default function Landing() {
               stroke-linecap="round"
             />
           </g>
+        </svg>
+        <svg
+          width="91"
+          height="91"
+          viewBox="0 0 91 91"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="45.5"
+            cy="45.5"
+            r="43.5"
+            stroke="#3AB8FF"
+            stroke-width="4"
+          />
+          <circle cx="45" cy="45" r="2" fill="#3AB8FF" />
+          <path
+            d="M36 32L44.9293 40.9293C44.9683 40.9683 45.0317 40.9683 45.0707 40.9293L54 32"
+            stroke="#3AB8FF"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M36 32L44.9293 40.9293C44.9683 40.9683 45.0317 40.9683 45.0707 40.9293L54 32"
+            stroke="#3AB8FF"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M36 49L44.9293 57.9293C44.9683 57.9683 45.0317 57.9683 45.0707 57.9293L54 49"
+            stroke="#3AB8FF"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
         </svg>
       </div>
     </div>

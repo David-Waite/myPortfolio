@@ -13,22 +13,8 @@
 
 .arrow {
   position: absolute;
-  bottom: 70px;
+  bottom: 100px;
   left: calc(50vw - 30px);
-  cursor: pointer;
-}
-
-.circle {
-  r: 0;
-  transition: 0.35s ease-out;
-}
-
-.arrow:hover .circle {
-  r: 45;
-}
-
-.arrow:hover .arrowPath {
-  stroke: #2c2c2c;
 }
 
 .midArrow {
@@ -48,7 +34,7 @@
     opacity: 100%;
   }
 
-  50% {
+  80% {
     transform: translateY(20%);
     opacity: 0;
   }
@@ -65,14 +51,13 @@
 
   to {
     transform: translateY(15%);
-    opacity: 100%;
+    opacity: 0;
   }
 }
 
 @keyframes moveDownBack {
-  0%,
-  40% {
-    transform: translateY(-20%);
+  80% {
+    transform: translateY(-15%);
     opacity: 0;
   }
 
@@ -169,11 +154,5 @@
   .home h2 {
     font-size: 22px;
     margin-bottom: 30px;
-  }
-}
-
-@media (max-height: 750px) {
-  .arrow {
-    bottom: 30px;
   }
 }

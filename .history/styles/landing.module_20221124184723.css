@@ -172,8 +172,4 @@
   }
 }
 
-@media (max-height: 750px) {
-  .arrow {
-    bottom: 30px;
-  }
-}
+@media (max-height: 750px);

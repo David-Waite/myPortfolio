@@ -13,74 +13,25 @@
 
 .arrow {
   position: absolute;
-  bottom: 70px;
+  bottom: 100px;
   left: calc(50vw - 30px);
-  cursor: pointer;
+}
+#backArrow,
+#midArrow,
+#frontArrow {
+  transition: all 1s ease;
 }
 
-.circle {
-  r: 0;
-  transition: 0.35s ease-out;
+#backArrow {
+  transform: translateY(-100%);
 }
 
-.arrow:hover .circle {
-  r: 45;
+.arrow:hover #fontArrow {
+  transform: translateY(40%);
+  color: green;
+  opacity: 0;
 }
 
-.arrow:hover .arrowPath {
-  stroke: #2c2c2c;
-}
-
-.midArrow {
-  animation: moveDownMid 1s forwards infinite;
-}
-.frontArrow {
-  animation: moveDownFront 1s forwards infinite;
-}
-
-.backArrow {
-  animation: moveDownBack 1s forwards infinite;
-}
-
-@keyframes moveDownFront {
-  0% {
-    transform: translateY(0%);
-    opacity: 100%;
-  }
-
-  50% {
-    transform: translateY(20%);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes moveDownMid {
-  from {
-    transform: translateY(0%);
-    opacity: 100%;
-  }
-
-  to {
-    transform: translateY(15%);
-    opacity: 100%;
-  }
-}
-
-@keyframes moveDownBack {
-  0%,
-  40% {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0%);
-    opacity: 100%;
-  }
-}
 .quickLink {
   margin-top: 20px;
   color: #e3e3e3;
@@ -169,11 +120,5 @@
   .home h2 {
     font-size: 22px;
     margin-bottom: 30px;
-  }
-}
-
-@media (max-height: 750px) {
-  .arrow {
-    bottom: 30px;
   }
 }
