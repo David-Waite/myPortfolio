@@ -46,8 +46,10 @@ export default function ScrollBar(props) {
 
   function scrollTo(section) {
     const element = document.getElementById(section);
-
-    element.scrollIntoView({ behavior: "smooth" });
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (

@@ -46,8 +46,10 @@ export default function ScrollBar(props) {
 
   function scrollTo(section) {
     const element = document.getElementById(section);
-
-    element.scrollIntoView({ behavior: "smooth" });
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   return (
@@ -77,7 +79,7 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <FilePersonFill
-              onClick={() => scrollTo("about")}
+              onClick={() => scroll(height)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -85,7 +87,7 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <LaptopFill
-              onClick={() => scrollTo("projects")}
+              onClick={() => scroll(height * 2)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
@@ -93,7 +95,7 @@ export default function ScrollBar(props) {
           </a>
           <a>
             <EnvelopeFill
-              onClick={() => scrollTo("contact")}
+              onClick={() => scroll(height * 3)}
               style={{
                 color: props.style === "dark" ? "#3ab8ff" : "#2c2c2c",
               }}
