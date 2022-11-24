@@ -40,7 +40,7 @@ export default function ScrollBar(props) {
   });
   React.useEffect(() => {
     window.addEventListener("resize", () => {
-      setHeight(window.scrollHeight);
+      setHeight(window.innerHeight);
     });
   }, []);
 
@@ -50,6 +50,7 @@ export default function ScrollBar(props) {
       behavior: "smooth",
     });
   }
+  console.log(height);
 
   return (
     <div className={styles.scrollBar}>

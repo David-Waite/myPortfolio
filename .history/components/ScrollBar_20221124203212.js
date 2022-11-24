@@ -50,6 +50,7 @@ export default function ScrollBar(props) {
       behavior: "smooth",
     });
   }
+  c;
 
   return (
     <div className={styles.scrollBar}>
