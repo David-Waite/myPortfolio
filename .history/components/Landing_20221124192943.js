@@ -38,15 +38,7 @@ export default function Landing() {
         </div>
 
         <img src="/DavidWaitePP.jpg" alt="" />
-        <div className={styles.circleCon}>
-          <div
-            className={styles.circle}
-            style={{
-              height: btnHover ? "43.5px" : "0px",
-              width: btnHover ? "43.5px" : "0px",
-            }}
-          ></div>
-        </div>
+
         <svg
           onMouseEnter={circleHoverIn}
           onMouseLeave={circleHoverOut}

@@ -3,7 +3,7 @@ import ScrollBar from "./ScrollBar";
 import React, { useState, useEffect } from "react";
 
 export default function Landing() {
-  const [btnHover, setBtnHover] = useState(false);
+  const [btnHover, setBtnHover] = useState(true);
 
   function scroll(position) {
     window.scrollTo({
@@ -19,10 +19,10 @@ export default function Landing() {
   });
 
   function circleHoverIn() {
-    setBtnHover(true);
-  }
-  function circleHoverOut() {
     setBtnHover(false);
+  }
+  function circleHoverIn() {
+    setBtnHover(true);
   }
   return (
     <div className={styles.container}>
@@ -49,7 +49,6 @@ export default function Landing() {
         </div>
         <svg
           onMouseEnter={circleHoverIn}
-          onMouseLeave={circleHoverOut}
           onClick={() => scroll(height)}
           className={styles.arrow}
           width="60"

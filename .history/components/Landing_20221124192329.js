@@ -19,10 +19,10 @@ export default function Landing() {
   });
 
   function circleHoverIn() {
-    setBtnHover(true);
+    setBtnHover(false);
   }
   function circleHoverOut() {
-    setBtnHover(false);
+    setBtnHover(true);
   }
   return (
     <div className={styles.container}>
