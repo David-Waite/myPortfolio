@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.5",
     "contentful": "^9.2.12",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
