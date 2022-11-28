@@ -1,0 +1,84 @@
+.arrow {
+  position: absolute;
+
+  left: calc(50vw - 30px);
+  cursor: pointer;
+  z-index: 1;
+}
+.circleCon {
+  position: absolute;
+  bottom: 78px;
+  width: 43.5px;
+  height: 43.5px;
+  left: calc(50vw - 21.7px);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  width: 43.5px;
+  height: 43.5px;
+  background-color: #3ab8ff;
+  border-radius: 50%;
+  transition: 0.4s ease-in-out;
+}
+.circleCon:hover .circle {
+  width: 0px;
+  height: 0px;
+}
+
+.arrow:hover .arrowPath {
+  stroke: #2c2c2c;
+}
+
+.midArrow {
+  animation: moveDownMid 1s forwards infinite;
+}
+.frontArrow {
+  animation: moveDownFront 1s forwards infinite;
+}
+
+.backArrow {
+  animation: moveDownBack 1s forwards infinite;
+}
+
+@keyframes moveDownFront {
+  0% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+
+  50% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveDownMid {
+  from {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+
+  to {
+    transform: translateY(15%);
+    opacity: 100%;
+  }
+}
+
+@keyframes moveDownBack {
+  0%,
+  40% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 100%;
+  }
+}
