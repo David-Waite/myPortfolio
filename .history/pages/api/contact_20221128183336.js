@@ -5,7 +5,7 @@ export default function (req, res) {
     port: 465,
     host: "smtp.zoho.com.au",
     auth: {
-      user: process.env.EMAIL_ADDRESS,
+      user: "davidwaiteportfolio@zohomail.com.au",
       pass: process.env.EMAIL_PASSWORD,
     },
     secure: true,
@@ -15,11 +15,11 @@ export default function (req, res) {
     to: process.env.PERSONAL_EMAIL_ADDRESS,
     subject: `Message From ${req.body.name}`,
     text: req.body.message,
-    html: `<div>${req.body.message}</div>`,
+    html: <div>{req.body.message}</div>,
   };
   transporter.sendMail(mailData, function (err, info) {
-    if (err) console.log(err);
-    else console.log(info);
+    if (err) console.log(`error: ${err}`);
+    else console.log(`error: ${info} `);
   });
   res.status(200);
 }
