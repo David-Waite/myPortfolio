@@ -18,7 +18,6 @@ export default function (req, res) {
     text: req.body.message,
     html: `<div>
               <h2>Name: ${req.body.name}</h2
-              <h3>Email: ${req.body.email}</h3>
               <h3>Message: ${req.body.message}</h3>
           </div>`,
   };

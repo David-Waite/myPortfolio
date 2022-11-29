@@ -13,12 +13,11 @@ export default function (req, res) {
   const mailData = {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.PERSONAL_EMAIL_ADDRESS,
-    cc: req.body.name,
+    cc: req.body.name
     subject: `Message From ${req.body.name}`,
     text: req.body.message,
     html: `<div>
               <h2>Name: ${req.body.name}</h2
-              <h3>Email: ${req.body.email}</h3>
               <h3>Message: ${req.body.message}</h3>
           </div>`,
   };
