@@ -64,16 +64,7 @@ export default function About() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formTop}>
               <div className={styles.name}>
-                <label htmlFor="name">
-                  Name
-                  {formFilled ? (
-                    ""
-                  ) : formData.name ? (
-                    ""
-                  ) : (
-                    <span>Be nice if this wasn&apos;t blank</span>
-                  )}
-                </label>
+                <label htmlFor="name"> Name</label>
                 <input
                   type="text"
                   name="name"
@@ -84,13 +75,7 @@ export default function About() {
               <div className={styles.email}>
                 <label htmlFor="email">
                   Email
-                  {formFilled ? (
-                    ""
-                  ) : formData.email ? (
-                    ""
-                  ) : (
-                    <span>Kinda need this one</span>
-                  )}
+                  {formFilled ? "" : formData.email ? "" : <span>*</span>}
                 </label>
                 <input
                   type="email"
@@ -102,16 +87,7 @@ export default function About() {
             </div>
 
             <div className={styles.message}>
-              <label htmlFor="message">
-                Message
-                {formFilled ? (
-                  ""
-                ) : formData.message ? (
-                  ""
-                ) : (
-                  <span>Not a conversation starter?</span>
-                )}
-              </label>
+              <label htmlFor="message"> Message</label>
               <textarea
                 name="message"
                 value={formData.message}

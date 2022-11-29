@@ -3,7 +3,6 @@ import React, { use, useEffect, useState } from "react";
 
 export default function About() {
   const [formState, setFormState] = useState("resting");
-  const [formFilled, setFormFilled] = useState(true);
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -21,40 +20,38 @@ export default function About() {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    setFormFilled(true);
-    if (formData.name && formData.email && formData.message) {
-      event.preventDefault();
-      console.log("Sending");
+    console.log("Sending");
 
-      fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }).then((res) => {
-        console.log("Response received");
-        setFormState("loading");
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          });
-          setTimeout(() => {
-            setFormState("submit");
-          }, 5000);
-          setFormState("sent");
-        } else if (res.status === 400) {
-          console.log("error");
-        }
-      });
-    } else {
-      setFormFilled(false);
-    }
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      console.log("Response received");
+      setFormState("loading");
+      if (res.status === 200) {
+        console.log("Response succeeded!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+
+        setFormState("sent");
+      }
+    });
+    console.log(formData);
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log("This will run after 1 second!");
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -64,16 +61,7 @@ export default function About() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formTop}>
               <div className={styles.name}>
-                <label htmlFor="name">
-                  Name
-                  {formFilled ? (
-                    ""
-                  ) : formData.name ? (
-                    ""
-                  ) : (
-                    <span>Be nice if this wasn&apos;t blank</span>
-                  )}
-                </label>
+                <label htmlFor="name"> Name</label>
                 <input
                   type="text"
                   name="name"
@@ -82,16 +70,7 @@ export default function About() {
                 />
               </div>
               <div className={styles.email}>
-                <label htmlFor="email">
-                  Email
-                  {formFilled ? (
-                    ""
-                  ) : formData.email ? (
-                    ""
-                  ) : (
-                    <span>Kinda need this one</span>
-                  )}
-                </label>
+                <label htmlFor="email"> Email</label>
                 <input
                   type="email"
                   name="email"
@@ -102,16 +81,7 @@ export default function About() {
             </div>
 
             <div className={styles.message}>
-              <label htmlFor="message">
-                Message
-                {formFilled ? (
-                  ""
-                ) : formData.message ? (
-                  ""
-                ) : (
-                  <span>Not a conversation starter?</span>
-                )}
-              </label>
+              <label htmlFor="message"> Message</label>
               <textarea
                 name="message"
                 value={formData.message}

@@ -53,10 +53,7 @@
 }
 
 .form label {
-  display: flex;
-  align-items: center;
   color: #ffffff;
-
   margin-bottom: 15px;
   font-size: 20px;
   font-weight: 300;
@@ -130,11 +127,6 @@
   border-top-color: transparent;
   border-radius: 50%;
   animation: button-loading-spinner 0.9s linear infinite;
-}
-
-.form label span {
-  margin-left: 10px;
-  color: #d9534f;
 }
 
 @keyframes button-loading-spinner {

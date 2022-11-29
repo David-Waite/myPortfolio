@@ -68,7 +68,7 @@ export default function About() {
                   Name
                   {formFilled ? (
                     ""
-                  ) : formData.name ? (
+                  ) : formData.email ? (
                     ""
                   ) : (
                     <span>Be nice if this wasn&apos;t blank</span>

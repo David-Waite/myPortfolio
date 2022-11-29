@@ -68,7 +68,7 @@ export default function About() {
                   Name
                   {formFilled ? (
                     ""
-                  ) : formData.name ? (
+                  ) : formData.email ? (
                     ""
                   ) : (
                     <span>Be nice if this wasn&apos;t blank</span>
@@ -89,7 +89,7 @@ export default function About() {
                   ) : formData.email ? (
                     ""
                   ) : (
-                    <span>Kinda need this one</span>
+                    <span>Be nice if this wasn&apos;t blank</span>
                   )}
                 </label>
                 <input
@@ -102,16 +102,7 @@ export default function About() {
             </div>
 
             <div className={styles.message}>
-              <label htmlFor="message">
-                Message
-                {formFilled ? (
-                  ""
-                ) : formData.message ? (
-                  ""
-                ) : (
-                  <span>Not a conversation starter?</span>
-                )}
-              </label>
+              <label htmlFor="message"> Message</label>
               <textarea
                 name="message"
                 value={formData.message}

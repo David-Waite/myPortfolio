@@ -15,10 +15,7 @@ export default function (req, res) {
     to: process.env.PERSONAL_EMAIL_ADDRESS,
     subject: `Message From ${req.body.name}`,
     text: req.body.message,
-    html: `<div>
-              <h2>Name: ${req.body.name}</h2
-              <h3>Message: ${req.body.message}</h3>
-          </div>`,
+    html: `<div>${req.body.message}</div>`,
   };
   transporter.sendMail(mailData, function (err, info) {
     if (err) console.log(err);

@@ -53,10 +53,7 @@
 }
 
 .form label {
-  display: flex;
-  align-items: center;
   color: #ffffff;
-
   margin-bottom: 15px;
   font-size: 20px;
   font-weight: 300;
@@ -88,14 +85,14 @@
   color: #3ab8ff;
 }
 .form .btnSent {
-  color: #04aa6d;
+  background-color: #04aa6d;
   border-color: #04aa6d;
   font-weight: 400;
   cursor: auto;
 }
 
 .form .btnSent:hover {
-  color: #04aa6d;
+  background-color: #04aa6d;
   border-color: #04aa6d;
   font-weight: 400;
 }
@@ -108,7 +105,7 @@
 
 .form .btnLoading {
   position: relative;
-
+  padding: 8px 16px;
   background: transparent;
   border-color: #3ab8ff;
 
@@ -130,11 +127,6 @@
   border-top-color: transparent;
   border-radius: 50%;
   animation: button-loading-spinner 0.9s linear infinite;
-}
-
-.form label span {
-  margin-left: 10px;
-  color: #d9534f;
 }
 
 @keyframes button-loading-spinner {

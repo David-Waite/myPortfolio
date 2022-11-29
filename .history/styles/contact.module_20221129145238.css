@@ -53,10 +53,7 @@
 }
 
 .form label {
-  display: flex;
-  align-items: center;
   color: #ffffff;
-
   margin-bottom: 15px;
   font-size: 20px;
   font-weight: 300;
@@ -83,40 +80,28 @@
   text-align: center;
 }
 
-.form .btnSubmit:hover {
+.form button:hover {
+  background-color: #3ab8ff;
   border-color: #3ab8ff;
-  color: #3ab8ff;
 }
 .form .btnSent {
-  color: #04aa6d;
-  border-color: #04aa6d;
-  font-weight: 400;
-  cursor: auto;
-}
-
-.form .btnSent:hover {
-  color: #04aa6d;
+  background-color: #04aa6d;
   border-color: #04aa6d;
   font-weight: 400;
 }
-.form .btnLoading:hover {
-  background: transparent;
-  border-color: #3ab8ff;
-  font-weight: 400;
-  cursor: auto;
-}
 
-.form .btnLoading {
+.btnLoading {
   position: relative;
-
-  background: transparent;
-  border-color: #3ab8ff;
-
+  padding: 8px 16px;
+  background: #009579;
+  border: none;
+  outline: none;
+  border-radius: 2px;
   cursor: pointer;
-  color: transparent;
+  color: transparent !important;
 }
 
-.form .btnLoading::after {
+.btnLoading::after {
   content: "";
   position: absolute;
   width: 16px;
@@ -126,23 +111,19 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  border: 3px solid #3ab8ff;
-  border-top-color: transparent;
+  border: 3px solid transparent;
+  border-top-color: #3ab8ff;
   border-radius: 50%;
-  animation: button-loading-spinner 0.9s linear infinite;
-}
-
-.form label span {
-  margin-left: 10px;
-  color: #d9534f;
+  animation: button-loading-spinner 1s ease infinite;
 }
 
 @keyframes button-loading-spinner {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0turn);
   }
+
   to {
-    transform: rotate(359deg);
+    transform: rotate(1turn);
   }
 }
 
