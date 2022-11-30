@@ -13,6 +13,7 @@ export default function (req, res) {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.PERSONAL_EMAIL_ADDRESS,
     subject: `Message From ${req.body.name}`,
+
     html: `<div>
               <h2>Name: ${req.body.name}</h2
               <h3>Email: ${req.body.email}</h3>
