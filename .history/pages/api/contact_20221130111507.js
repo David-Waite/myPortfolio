@@ -1,4 +1,5 @@
 export default function (req, res) {
+  require("dotenv").config();
   let nodemailer = require("nodemailer");
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -12,6 +13,7 @@ export default function (req, res) {
   const mailData = {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.PERSONAL_EMAIL_ADDRESS,
+
     subject: `Message From ${req.body.name}`,
     text: req.body.message,
     html: `<div>

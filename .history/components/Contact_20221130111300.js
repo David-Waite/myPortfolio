@@ -122,8 +122,8 @@ export default function About() {
               className={
                 formState === "sent"
                   ? styles.btnSent
-                  : formState === "submit"
-                  ? styles.btnSubmit
+                  : formState === "loading"
+                  ? styles.btnLoading
                   : styles.btnLoading
               }
             >
