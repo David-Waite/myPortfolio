@@ -36,7 +36,7 @@ export default function Landing() {
             I&apos;m David
           </h1>
           <h2>Frontend web developer</h2>
-          <div className={styles.icons} style={{ display: "none" }}>
+          <div className={styles.icons} style={{display: none}>
             <a
               href="https://github.com/David-Waite"
               target="_blank"

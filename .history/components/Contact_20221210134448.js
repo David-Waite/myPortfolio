@@ -23,38 +23,44 @@ export default function About() {
   function handleSubmit(event) {
     event.preventDefault();
     setFormFilled(true);
-    if (formData.name && formData.email && formData.message) {
-      event.preventDefault();
-      console.log("Sending");
-      setFormState("loading");
-      fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }).then((res) => {
-        console.log("Response received");
 
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
+    if (formData.name && formData.email && formData.message) {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha
+          .execute(SITE_KEY, { action: "submit" })
+          .then(async (token) => {
+            /* send data to the server */
+
+            const body = {
+              name,
+              email,
+              recaptchaResponse: token,
+            };
+
+            try {
+              const response = await fetch("/api/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json;chaset=utf-8" },
+                body: JSON.stringify(body),
+              });
+              if (response.ok) {
+                const json = await response.json();
+                setResult(json);
+              } else {
+                throw new Error(response.statusText);
+              }
+            } catch (error) {
+              setResult({ message: error.message });
+            }
+
+            /* End of the sending data */
+
+            setProcessing(false);
+            setCompleted(true);
           });
-          setTimeout(() => {
-            setFormState("submit");
-          }, 5000);
-          setFormState("sent");
-        } else if (res.status === 400) {
-          console.log("error");
-        }
       });
-    } else {
-      setFormFilled(false);
-    }
+      console.log("Sending");
+      
   }
 
   return (

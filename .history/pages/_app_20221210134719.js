@@ -7,7 +7,7 @@ import Index from ".";
 function MyApp({ Component, pageProps }) {
   return (
     <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY}
+      reCaptchaKey="your_site-key"
       scriptProps={{
         async: false,
         defer: false,

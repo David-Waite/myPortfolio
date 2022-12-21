@@ -1,7 +1,9 @@
 import styles from "../styles/contact.module.css";
-import React, { use, useEffect, useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import React, { useState, useCallback } from "react";
 
 export default function About() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState("submit");
   const [formFilled, setFormFilled] = useState(true);
   const [formData, setFormData] = React.useState({
@@ -20,9 +22,24 @@ export default function About() {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  const handleSubmitForm = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available");
+        return;
+      }
+      executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+        console.log(gReCaptchaToken, "response Google reCaptcha server");
+        submitEnquiryForm(gReCaptchaToken);
+      });
+    },
+    [executeRecaptcha]
+  );
+
+  function submitEnquiryForm(gReCaptchaToken) {
     setFormFilled(true);
+
     if (formData.name && formData.email && formData.message) {
       event.preventDefault();
       console.log("Sending");
@@ -62,7 +79,7 @@ export default function About() {
       <div className={styles.contact} id="contact">
         <h2>Shoot me a message</h2>
         <div>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSubmitForm}>
             <div className={styles.formTop}>
               <div className={styles.name}>
                 <label htmlFor="name">

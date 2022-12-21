@@ -2,7 +2,9 @@ import Landing from "../components/Landing";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import ScrollBar from "../components/ScrollBar";
 import { createClient } from "contentful";
+SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY;
 
 export async function getStaticProps() {
   const client = createClient({

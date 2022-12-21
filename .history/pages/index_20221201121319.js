@@ -2,6 +2,9 @@ import Landing from "../components/Landing";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import ScrollBar from "../components/ScrollBar";
+import Head from "next/head";
+import Script from "next/script";
 import { createClient } from "contentful";
 
 export async function getStaticProps() {
@@ -19,9 +22,16 @@ export async function getStaticProps() {
   };
 }
 
+const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY;
+
 export default function index({ projects }) {
   return (
     <div>
+      <Head>
+        <title>reCaptcha v3 with Next.js</title>
+        <meta name="description" content="reCaptcha v3 in Next.js" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Landing />
       <About />
       <Projects projects={projects} />

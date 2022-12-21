@@ -24,7 +24,6 @@ export default function About() {
     event.preventDefault();
     setFormFilled(true);
     if (formData.name && formData.email && formData.message) {
-      event.preventDefault();
       console.log("Sending");
       setFormState("loading");
       fetch("/api/contact", {

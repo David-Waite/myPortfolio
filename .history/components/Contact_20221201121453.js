@@ -19,7 +19,49 @@ export default function About() {
       };
     });
   }
+  if (completed) {
+    setCompleted(false);
+    setName("");
+    setEmail("");
+    setResult({});
+  } else {
+    setProcessing(true);
 
+    window.grecaptcha.ready(() => {
+      window.grecaptcha
+        .execute(SITE_KEY, { action: "submit" })
+        .then(async (token) => {
+          /* send data to the server */
+
+          const body = {
+            name,
+            email,
+            recaptchaResponse: token,
+          };
+
+          try {
+            const response = await fetch("/api/register", {
+              method: "POST",
+              headers: { "Content-Type": "application/json;chaset=utf-8" },
+              body: JSON.stringify(body),
+            });
+            if (response.ok) {
+              const json = await response.json();
+              setResult(json);
+            } else {
+              throw new Error(response.statusText);
+            }
+          } catch (error) {
+            setResult({ message: error.message });
+          }
+
+          /* End of the sending data */
+
+          setProcessing(false);
+          setCompleted(true);
+        });
+    });
+  }
   function handleSubmit(event) {
     event.preventDefault();
     setFormFilled(true);

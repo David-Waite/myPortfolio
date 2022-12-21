@@ -1,7 +1,9 @@
 import styles from "../styles/contact.module.css";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import React, { use, useEffect, useState } from "react";
 
 export default function About() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState("submit");
   const [formFilled, setFormFilled] = useState(true);
   const [formData, setFormData] = React.useState({

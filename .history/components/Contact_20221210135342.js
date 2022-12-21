@@ -1,7 +1,9 @@
 import styles from "../styles/contact.module.css";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import React, { use, useEffect, useState } from "react";
 
 export default function About() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState("submit");
   const [formFilled, setFormFilled] = useState(true);
   const [formData, setFormData] = React.useState({
@@ -20,9 +22,25 @@ export default function About() {
     });
   }
 
+  const handleSubmitForm = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available");
+        return;
+      }
+      executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+        console.log(gReCaptchaToken, "response Google reCaptcha server");
+        submitEnquiryForm(gReCaptchaToken);
+      });
+    },
+    [executeRecaptcha]
+  );
+
   function handleSubmit(event) {
     event.preventDefault();
     setFormFilled(true);
+
     if (formData.name && formData.email && formData.message) {
       event.preventDefault();
       console.log("Sending");
