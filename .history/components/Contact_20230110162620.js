@@ -6,7 +6,6 @@ export default function About() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [notification, setNotification] = useState("");
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -24,31 +23,6 @@ export default function About() {
     },
     [executeRecaptcha]
   );
-
-  const submitEnquiryForm = (gReCaptchaToken) => {
-    fetch("/api/enquiry", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-        gRecaptchaToken: gReCaptchaToken,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res, "response from backend");
-        if (res?.status === "success") {
-          setNotification(res?.message);
-        } else {
-          setNotification(res?.message);
-        }
-      });
-  };
 
   return (
     <div>
@@ -87,10 +61,9 @@ export default function About() {
               />
             </div>
             <button type="submit" className="submit">
-              Submit
+              {formState === "sent" ? "Sent" : "Submit"}
             </button>
           </form>
-          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>

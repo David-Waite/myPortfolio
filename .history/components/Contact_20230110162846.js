@@ -6,7 +6,6 @@ export default function About() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [notification, setNotification] = useState("");
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -90,7 +89,6 @@ export default function About() {
               Submit
             </button>
           </form>
-          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>

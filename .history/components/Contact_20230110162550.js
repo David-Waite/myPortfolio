@@ -1,12 +1,11 @@
 import styles from "../styles/contact.module.css";
-import React, { use, useEffect, useState, useCallback } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function About() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [notification, setNotification] = useState("");
 
   const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -25,37 +24,12 @@ export default function About() {
     [executeRecaptcha]
   );
 
-  const submitEnquiryForm = (gReCaptchaToken) => {
-    fetch("/api/enquiry", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-        gRecaptchaToken: gReCaptchaToken,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res, "response from backend");
-        if (res?.status === "success") {
-          setNotification(res?.message);
-        } else {
-          setNotification(res?.message);
-        }
-      });
-  };
-
   return (
     <div>
       <div className={styles.contact} id="contact">
         <h2>Shoot me a message</h2>
         <div>
-          <form className={styles.form} onSubmit={handleSumitForm}>
+          <form className={styles.form} onSubmit={handleSubmitForm}>
             <div className={styles.formTop}>
               <div className={styles.name}>
                 <label htmlFor="name">Name</label>
@@ -87,10 +61,9 @@ export default function About() {
               />
             </div>
             <button type="submit" className="submit">
-              Submit
+              {formState === "sent" ? "Sent" : "Submit"}
             </button>
           </form>
-          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>

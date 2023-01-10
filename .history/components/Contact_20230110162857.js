@@ -90,7 +90,6 @@ export default function About() {
               Submit
             </button>
           </form>
-          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>
