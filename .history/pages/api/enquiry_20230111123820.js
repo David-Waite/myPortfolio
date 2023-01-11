@@ -16,6 +16,7 @@ const handler = (req, res) => {
           );
           if (reCaptchaRes?.score > 0.5) {
             // Save data to the database from here
+            
 
             let nodemailer = require("nodemailer");
             const transporter = nodemailer.createTransport({
@@ -43,7 +44,7 @@ const handler = (req, res) => {
             });
             res.status(200).json({
               status: "success",
-              message: `Enquiry submitted successfully `,
+              message: "Enquiry submitted successfully",
             });
           } else {
             res.status(200).json({

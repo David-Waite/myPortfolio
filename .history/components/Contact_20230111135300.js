@@ -10,9 +10,9 @@ export default function About() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = React.useState({
-    name: "hi",
-    email: "hi",
-    message: "hi",
+    name: "",
+    email: "",
+    message: "",
   });
 
   function handleChange(event) {
@@ -36,7 +36,7 @@ export default function About() {
         submitEnquiryForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, formData]
+    [executeRecaptcha]
   );
 
   const submitEnquiryForm = (gReCaptchaToken) => {

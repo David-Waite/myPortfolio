@@ -1,4 +1,6 @@
 const handler = (req, res) => {
+  console.log(req);
+  console.log("hi");
   if (req.method === "POST") {
     try {
       fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -43,7 +45,7 @@ const handler = (req, res) => {
             });
             res.status(200).json({
               status: "success",
-              message: `Enquiry submitted successfully `,
+              message: "Enquiry submitted successfully",
             });
           } else {
             res.status(200).json({

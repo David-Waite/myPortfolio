@@ -43,7 +43,7 @@ const handler = (req, res) => {
             });
             res.status(200).json({
               status: "success",
-              message: `Enquiry submitted successfully `,
+              message: `Enquiry submitted successfully`,
             });
           } else {
             res.status(200).json({

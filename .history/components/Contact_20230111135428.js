@@ -36,7 +36,7 @@ export default function About() {
         submitEnquiryForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, formData]
+    [executeRecaptcha]
   );
 
   const submitEnquiryForm = (gReCaptchaToken) => {

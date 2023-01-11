@@ -1,5 +1,5 @@
 import styles from "../styles/contact.module.css";
-import React, { useState, useCallback } from "react";
+import React, { use, useEffect, useState, useCallback } from "react";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function About() {
@@ -7,23 +7,8 @@ export default function About() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [notification, setNotification] = useState("");
+
   const { executeRecaptcha } = useGoogleReCaptcha();
-
-  const [formData, setFormData] = React.useState({
-    name: "hi",
-    email: "hi",
-    message: "hi",
-  });
-
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [name]: value,
-      };
-    });
-  }
 
   const handleSumitForm = useCallback(
     (e) => {
@@ -36,7 +21,7 @@ export default function About() {
         submitEnquiryForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, formData]
+    [executeRecaptcha]
   );
 
   const submitEnquiryForm = (gReCaptchaToken) => {
@@ -47,9 +32,9 @@ export default function About() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+        name: name,
+        email: email,
+        message: message,
         gRecaptchaToken: gReCaptchaToken,
       }),
     })
@@ -77,17 +62,17 @@ export default function About() {
                 <input
                   type="text"
                   name="name"
-                  onChange={handleChange}
-                  value={formData.name}
+                  onChange={(e) => setName(e?.target?.value)}
+                  value={name}
                 />
               </div>
               <div className={styles.email}>
                 <label htmlFor="email">Email</label>
                 <input
-                  type="email"
+                  type="text"
                   name="email"
-                  onChange={handleChange}
-                  value={formData.email}
+                  onChange={(e) => setEmail(e?.target?.value)}
+                  value={email}
                 />
               </div>
             </div>
@@ -95,9 +80,10 @@ export default function About() {
             <div className={styles.message}>
               <label htmlFor="message">Message</label>
               <textarea
+                type="text"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+                value={message}
+                onChange={(e) => setMessage(e?.target?.value)}
               />
             </div>
             <button type="submit" className="submit">

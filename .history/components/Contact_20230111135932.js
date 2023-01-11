@@ -10,9 +10,9 @@ export default function About() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = React.useState({
-    name: "hi",
-    email: "hi",
-    message: "hi",
+    name: "",
+    email: "",
+    message: "",
   });
 
   function handleChange(event) {
@@ -25,8 +25,8 @@ export default function About() {
     });
   }
 
-  const handleSumitForm = useCallback(
-    (e) => {
+  const handleSumitForm =
+    ((e) => {
       e.preventDefault();
       if (!executeRecaptcha) {
         console.log("Execute recaptcha not yet available");
@@ -36,8 +36,7 @@ export default function About() {
         submitEnquiryForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, formData]
-  );
+    [executeRecaptcha]);
 
   const submitEnquiryForm = (gReCaptchaToken) => {
     fetch("/api/enquiry", {

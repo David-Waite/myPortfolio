@@ -10,9 +10,9 @@ export default function About() {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [formData, setFormData] = React.useState({
-    name: "hi",
-    email: "hi",
-    message: "hi",
+    name: "",
+    email: "",
+    message: "",
   });
 
   function handleChange(event) {
@@ -36,7 +36,7 @@ export default function About() {
         submitEnquiryForm(gReCaptchaToken);
       });
     },
-    [executeRecaptcha, formData]
+    [executeRecaptcha]
   );
 
   const submitEnquiryForm = (gReCaptchaToken) => {
@@ -47,9 +47,9 @@ export default function About() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
+        name: name,
+        email: email,
+        message: message,
         gRecaptchaToken: gReCaptchaToken,
       }),
     })
@@ -84,10 +84,10 @@ export default function About() {
               <div className={styles.email}>
                 <label htmlFor="email">Email</label>
                 <input
-                  type="email"
+                  type="text"
                   name="email"
-                  onChange={handleChange}
-                  value={formData.email}
+                  onChange={(e) => setEmail(e?.target?.value)}
+                  value={email}
                 />
               </div>
             </div>
@@ -95,9 +95,10 @@ export default function About() {
             <div className={styles.message}>
               <label htmlFor="message">Message</label>
               <textarea
+                type="text"
                 name="message"
-                value={formData.message}
-                onChange={handleChange}
+                value={message}
+                onChange={(e) => setMessage(e?.target?.value)}
               />
             </div>
             <button type="submit" className="submit">
