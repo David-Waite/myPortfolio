@@ -1,4 +1,13 @@
-const handler = (req, res) => {
+export default async (req, res) => {
+  const transporter = nodemailer.createTransport({
+    port: 465,
+    host: "smtp.zoho.com.au",
+    auth: {
+      user: process.env.EMAIL_ADDRESS,
+      pass: process.env.EMAIL_PASSWORD,
+    },
+    secure: true,
+  });
   if (req.method === "POST") {
     try {
       fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -18,15 +27,7 @@ const handler = (req, res) => {
             // Save data to the database from here
 
             let nodemailer = require("nodemailer");
-            const transporter = nodemailer.createTransport({
-              port: 465,
-              host: "smtp.zoho.com.au",
-              auth: {
-                user: process.env.EMAIL_ADDRESS,
-                pass: process.env.EMAIL_PASSWORD,
-              },
-              secure: true,
-            });
+
             const mailData = {
               from: process.env.EMAIL_ADDRESS,
               to: process.env.PERSONAL_EMAIL_ADDRESS,
@@ -43,7 +44,7 @@ const handler = (req, res) => {
             });
             res.status(200).json({
               status: "success",
-              message: `Enquiry submitted successfully`,
+              message: `Enquiry submitted successfully `,
             });
           } else {
             res.status(200).json({
@@ -63,5 +64,3 @@ const handler = (req, res) => {
     res.end();
   }
 };
-
-export default handler;

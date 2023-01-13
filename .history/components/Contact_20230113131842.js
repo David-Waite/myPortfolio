@@ -25,28 +25,6 @@ export default function About() {
     });
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const res = await fetch("/api/contact", {
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-
-    const { error } = await res.json();
-    if (error) {
-      console.log(error);
-      return;
-    }
-  };
-
   const handleSumitForm = useCallback(
     (e) => {
       e.preventDefault();
@@ -62,7 +40,7 @@ export default function About() {
   );
 
   const submitEnquiryForm = (gReCaptchaToken) => {
-    fetch("/api/enquiry", {
+    fetch("/api/contact", {
       method: "POST",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -92,7 +70,7 @@ export default function About() {
       <div className={styles.contact} id="contact">
         <h2>Shoot me a message</h2>
         <div>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSumitForm}>
             <div className={styles.formTop}>
               <div className={styles.name}>
                 <label htmlFor="name">Name</label>

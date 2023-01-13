@@ -1,4 +1,4 @@
-const handler = (req, res) => {
+export default async (req, res) => {
   if (req.method === "POST") {
     try {
       fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -63,5 +63,3 @@ const handler = (req, res) => {
     res.end();
   }
 };
-
-export default handler;

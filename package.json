@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@vercel/analytics": "^0.1.5",
     "contentful": "^9.2.12",
     "dotenv": "^16.0.3",

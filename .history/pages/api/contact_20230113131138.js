@@ -8,13 +8,8 @@ async function sendEmail(req, res) {
     await sendgrid.send({
       to: process.env.PERSONAL_EMAIL_ADDRESS, // Your email where you'll receive emails
       from: process.env.EMAIL_ADDRESS, // your website email address here
-      subject: `MESSAGE VIA PORTFOLIO FROM: ${req.body.name}`,
-      html: `
-      <div>
-        <h2>Name: ${req.body.name}</h2
-        <h3>Email: ${req.body.email}</h3>
-        <h3>Message: ${req.body.message}</h3>
-      </div>`,
+      subject: `${req.body.subject}`,
+      html: `<div>You've got a mail</div>`,
     });
   } catch (error) {
     // console.log(error);

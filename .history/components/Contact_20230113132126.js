@@ -28,7 +28,7 @@ export default function About() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/contact", {
+    const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
         name: formData.name,
         email: formData.email,

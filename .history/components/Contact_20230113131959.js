@@ -28,11 +28,14 @@ export default function About() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("/api/contact", {
+    let isValidForm = handleValidation();
+
+    const res = await fetch("/api/sendgrid", {
       body: JSON.stringify({
         name: formData.name,
         email: formData.email,
         message: formData.message,
+        gRecaptchaToken: gReCaptchaToken,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -45,6 +48,7 @@ export default function About() {
       console.log(error);
       return;
     }
+    console.log(fullname, email, subject, message);
   };
 
   const handleSumitForm = useCallback(
@@ -92,7 +96,7 @@ export default function About() {
       <div className={styles.contact} id="contact">
         <h2>Shoot me a message</h2>
         <div>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSumitForm}>
             <div className={styles.formTop}>
               <div className={styles.name}>
                 <label htmlFor="name">Name</label>
