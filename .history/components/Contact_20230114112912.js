@@ -30,9 +30,8 @@ export default function About() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormFilled(true);
-
+    setFormState("loading");
     if (formData.name && formData.email && formData.message) {
-      setFormState("loading");
       const res = await fetch("/api/contact", {
         body: JSON.stringify({
           name: formData.name,
@@ -43,22 +42,13 @@ export default function About() {
           "Content-Type": "application/json",
         },
         method: "POST",
-      }).then((res) => {
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          });
-          setTimeout(() => {
-            setFormState("submit");
-          }, 5000);
-          setFormState("sent");
-        } else if (res.status === 400) {
-          console.log("error");
-        }
       });
+
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        return;
+      }
     } else {
       setFormFilled(false);
     }
@@ -150,33 +140,15 @@ export default function About() {
             </div>
 
             <div className={styles.message}>
-              <label htmlFor="message">
-                Message
-                {formFilled ? (
-                  ""
-                ) : formData.message ? (
-                  ""
-                ) : (
-                  <span>Not a conversation starter?</span>
-                )}
-              </label>
+              <label htmlFor="message">Message</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
               />
             </div>
-            <button
-              type="submit"
-              className={
-                formState === "sent"
-                  ? styles.btnSent
-                  : formState === "submit"
-                  ? styles.btnSubmit
-                  : styles.btnLoading
-              }
-            >
-              {formState === "sent" ? "Sent" : "Submit"}
+            <button type="submit" className="submit">
+              Submit
             </button>
           </form>
           {notification && <p>{notification}</p>}

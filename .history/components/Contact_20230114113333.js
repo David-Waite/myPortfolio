@@ -30,9 +30,8 @@ export default function About() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormFilled(true);
-
+    setFormState("loading");
     if (formData.name && formData.email && formData.message) {
-      setFormState("loading");
       const res = await fetch("/api/contact", {
         body: JSON.stringify({
           name: formData.name,
@@ -59,6 +58,11 @@ export default function About() {
           console.log("error");
         }
       });
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        return;
+      }
     } else {
       setFormFilled(false);
     }

@@ -29,10 +29,7 @@ export default function About() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormFilled(true);
-
     if (formData.name && formData.email && formData.message) {
-      setFormState("loading");
       const res = await fetch("/api/contact", {
         body: JSON.stringify({
           name: formData.name,
@@ -43,24 +40,13 @@ export default function About() {
           "Content-Type": "application/json",
         },
         method: "POST",
-      }).then((res) => {
-        if (res.status === 200) {
-          console.log("Response succeeded!");
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-          });
-          setTimeout(() => {
-            setFormState("submit");
-          }, 5000);
-          setFormState("sent");
-        } else if (res.status === 400) {
-          console.log("error");
-        }
       });
-    } else {
-      setFormFilled(false);
+
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        return;
+      }
     }
   };
 
@@ -112,16 +98,7 @@ export default function About() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formTop}>
               <div className={styles.name}>
-                <label htmlFor="name">
-                  Name
-                  {formFilled ? (
-                    ""
-                  ) : formData.name ? (
-                    ""
-                  ) : (
-                    <span>Be nice if this wasn&apos;t blank</span>
-                  )}
-                </label>
+                <label htmlFor="name">Name</label>
                 <input
                   type="text"
                   name="name"
@@ -130,16 +107,7 @@ export default function About() {
                 />
               </div>
               <div className={styles.email}>
-                <label htmlFor="email">
-                  Email
-                  {formFilled ? (
-                    ""
-                  ) : formData.email ? (
-                    ""
-                  ) : (
-                    <span>Kinda need this one</span>
-                  )}
-                </label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -150,33 +118,15 @@ export default function About() {
             </div>
 
             <div className={styles.message}>
-              <label htmlFor="message">
-                Message
-                {formFilled ? (
-                  ""
-                ) : formData.message ? (
-                  ""
-                ) : (
-                  <span>Not a conversation starter?</span>
-                )}
-              </label>
+              <label htmlFor="message">Message</label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
               />
             </div>
-            <button
-              type="submit"
-              className={
-                formState === "sent"
-                  ? styles.btnSent
-                  : formState === "submit"
-                  ? styles.btnSubmit
-                  : styles.btnLoading
-              }
-            >
-              {formState === "sent" ? "Sent" : "Submit"}
+            <button type="submit" className="submit">
+              Submit
             </button>
           </form>
           {notification && <p>{notification}</p>}
