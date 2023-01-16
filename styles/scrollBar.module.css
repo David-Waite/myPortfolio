@@ -39,9 +39,3 @@
   font-size: 18px;
   cursor: pointer;
 }
-
-@media (max-width: 700px) {
-  .linksContainer > * {
-    cursor: context-menu;
-  }
-}
