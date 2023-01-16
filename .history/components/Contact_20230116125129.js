@@ -78,32 +78,6 @@ export default function About() {
     [executeRecaptcha, formData]
   );
 
-  const submitEnquiryForm = (gReCaptchaToken) => {
-    fetch("/api/enquiry", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        gRecaptchaToken: gReCaptchaToken,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res, "response from backend");
-
-        if (res?.status === "success") {
-          setNotification(res?.message);
-        } else {
-          setNotification(res?.message);
-        }
-      });
-  };
-
   return (
     <div>
       <div className={styles.contact} id="contact">

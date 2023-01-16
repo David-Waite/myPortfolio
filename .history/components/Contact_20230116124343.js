@@ -27,7 +27,9 @@ export default function About() {
     });
   }
 
-  const handleSubmit = async (gReCaptchaToken) => {
+  const handleSubmit = async (gReCaptchaToken, e) => {
+    e.preventDefault();
+
     setFormFilled(true);
 
     if (formData.name && formData.email && formData.message) {

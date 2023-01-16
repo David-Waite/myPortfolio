@@ -27,7 +27,8 @@ export default function About() {
     });
   }
 
-  const handleSubmit = async (gReCaptchaToken) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setFormFilled(true);
 
     if (formData.name && formData.email && formData.message) {
@@ -37,7 +38,6 @@ export default function About() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          gRecaptchaToken: gReCaptchaToken,
         }),
         headers: {
           "Content-Type": "application/json",

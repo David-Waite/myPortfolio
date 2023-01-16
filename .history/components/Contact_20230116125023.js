@@ -28,6 +28,7 @@ export default function About() {
   }
 
   const handleSubmit = async (gReCaptchaToken) => {
+    e.preventDefault();
     setFormFilled(true);
 
     if (formData.name && formData.email && formData.message) {
