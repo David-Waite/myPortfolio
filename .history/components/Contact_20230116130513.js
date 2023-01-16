@@ -1,7 +1,13 @@
 import styles from "../styles/contact.module.css";
 import React, { useState, useCallback } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function About() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [notification, setNotification] = useState("");
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState("submit");
   const [formFilled, setFormFilled] = useState(true);
 
@@ -133,6 +139,7 @@ export default function About() {
               {formState === "sent" ? "Sent" : "Submit"}
             </button>
           </form>
+          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>

@@ -1,7 +1,13 @@
 import styles from "../styles/contact.module.css";
 import React, { useState, useCallback } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function About() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [notification, setNotification] = useState("");
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const [formState, setFormState] = useState("submit");
   const [formFilled, setFormFilled] = useState(true);
 
@@ -56,6 +62,46 @@ export default function About() {
     } else {
       setFormFilled(false);
     }
+  };
+
+  const handleSumitForm = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available");
+        return;
+      }
+      executeRecaptcha("enquiryFormSubmit").then((gReCaptchaToken) => {
+        submitEnquiryForm(gReCaptchaToken);
+      });
+    },
+    [executeRecaptcha, formData]
+  );
+
+  const submitEnquiryForm = (gReCaptchaToken) => {
+    fetch("/api/enquiry", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        gRecaptchaToken: gReCaptchaToken,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res, "response from backend");
+
+        if (res?.status === "success") {
+          setNotification(res?.message);
+        } else {
+          setNotification(res?.message);
+        }
+      });
   };
 
   return (
@@ -133,6 +179,7 @@ export default function About() {
               {formState === "sent" ? "Sent" : "Submit"}
             </button>
           </form>
+          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>

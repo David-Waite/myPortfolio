@@ -133,6 +133,7 @@ export default function About() {
               {formState === "sent" ? "Sent" : "Submit"}
             </button>
           </form>
+          {notification && <p>{notification}</p>}
         </div>
       </div>
     </div>
