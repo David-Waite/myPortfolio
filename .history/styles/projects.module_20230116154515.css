@@ -127,6 +127,9 @@
   .projectsCard h3 {
     margin-top: 0;
   }
+  .madeWith {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 575px) {
