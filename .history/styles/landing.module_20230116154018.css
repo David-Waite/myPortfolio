@@ -195,7 +195,7 @@
   .arrow {
     display: none;
   }
-  .icons svg {
-    padding-bottom: 20px;
+  .icons a {
+    padding-bottom: 200px;
   }
 }

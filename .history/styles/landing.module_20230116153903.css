@@ -183,6 +183,7 @@
     margin-right: 70px;
   }
   .home img {
+    padding-top: 10px;
     width: calc(100% - 15px);
   }
   .home h1 {
@@ -194,8 +195,5 @@
   .circleCon,
   .arrow {
     display: none;
-  }
-  .icons svg {
-    padding-bottom: 20px;
   }
 }

@@ -190,12 +190,10 @@
   }
   .home h2 {
     font-size: 22px;
+    margin-bottom: 0px;
   }
   .circleCon,
   .arrow {
     display: none;
-  }
-  .icons svg {
-    padding-bottom: 20px;
   }
 }
