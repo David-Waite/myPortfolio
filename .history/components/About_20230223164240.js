@@ -1,6 +1,5 @@
 import styles from "../styles/about.module.css";
 import ScrollBar from "./ScrollBar";
-import DownPageBtn from "./DownPageBtn";
 
 export default function About() {
   return (
@@ -14,13 +13,12 @@ export default function About() {
         <div className={styles.aboutMe}>
           <h2>About me</h2>
           <p>
-            I like to create simple clean websites that gets the user to where
-            they wanna go without the clutter.
+            I like to design and create simple clean websites that gets the user
+            to where they wanna go without the clutter.
             <br />
             <br />
-            I&apos;m currently studying frontend web development at Swinburne
-            University in Melbourne, with the plans of doing computer science in
-            2023.
+            I&apos;m currently studying computer science at Swinburne University
+            in Melbourne, with the plans of doing computer science in 2023.
           </p>
         </div>
         <div className={styles.aboutFiller}></div>
@@ -40,7 +38,6 @@ export default function About() {
             <img src="/contentfulIcon.png" alt="" />
           </div>
         </div>
-        <DownPageBtn />
       </div>
     </div>
   );

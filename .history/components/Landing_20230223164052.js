@@ -35,8 +35,8 @@ export default function Landing() {
             <br />
             I&apos;m David
           </h1>
-          <h2>Frontend web developer</h2>
-          <div className={styles.icons} style={{display: none}>
+          <h2>Frontend web devloper</h2>
+          <div className={styles.icons} style={{ display: "inline" }}>
             <a
               href="https://github.com/David-Waite"
               target="_blank"
