@@ -1,0 +1,30 @@
+.container {
+}
+
+.img {
+  width: 780px;
+
+  position: absolute;
+}
+
+.imgCenter {
+  transform: translate(-50%, -50%);
+
+  left: 50%;
+  /* animation: moveLeft 2s infinite; */
+}
+
+.imgRight {
+  left: 820px;
+}
+
+@keyframes moveLeft {
+  0%,
+  80% {
+    right: 0;
+  }
+
+  100% {
+    right: 780px;
+  }
+}

@@ -1,0 +1,6 @@
+.dialogContainer {
+  width: 1000px;
+  margin: 20px auto;
+  height: calc(100vh - 40px);
+  z-index: 2;
+}

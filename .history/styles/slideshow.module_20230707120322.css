@@ -1,0 +1,43 @@
+.container {
+  width: 780px;
+  height: 415.27px;
+  overflow: hidden;
+  border: 2px solid black;
+  position: relative;
+}
+
+.img {
+  width: 780px;
+  position: absolute;
+}
+
+.imgCenter {
+  right: 0;
+  animation: moveLeftCenter 5s infinite;
+}
+
+.imgRight {
+  left: 800px;
+  animation: moveLeftRight 5s infinite;
+}
+
+@keyframes moveLeftCenter {
+  0%,
+  70% {
+    right: 0;
+  }
+
+  100% {
+    right: 780px;
+  }
+}
+@keyframes moveLeftRight {
+  0%,
+  70% {
+    left: 780px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}

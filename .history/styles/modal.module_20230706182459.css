@@ -1,0 +1,35 @@
+.dialogContainer {
+  background-color: #2c2c2c;
+  position: fixed;
+  margin: auto auto;
+  top: 50%;
+  width: 900px;
+  height: calc(90vh);
+  transform: translate(0%, -50%);
+  z-index: 2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.closeBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.closeBtn {
+  color: white;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin: 5px;
+}
+.closeBtn:hover {
+  color: rgb(184, 184, 184);
+}
+
+.title {
+  text-align: center;
+  color: white;
+  letter-spacing: 6px;
+}

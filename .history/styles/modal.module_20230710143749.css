@@ -1,0 +1,101 @@
+.dialogContainer {
+  background-color: #2c2c2c;
+  position: fixed;
+  margin: auto auto;
+  top: 50%;
+  width: 900px;
+  height: calc(90vh);
+  transform: translate(0%, -50%);
+  z-index: 2;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.innerContainer {
+  margin: 20px 40px;
+}
+
+.closeBtnContainer {
+  margin: 40px 40px -40px -40px;
+
+  display: flex;
+  justify-content: flex-end;
+}
+.closeBtn {
+  color: white;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  color: rgb(184, 184, 184);
+}
+
+.title {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  letter-spacing: 1.6px;
+  font-weight: 500;
+}
+
+.secondTitle {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 20px;
+  color: rgb(58, 184, 255);
+  font-weight: 500;
+}
+
+.description {
+  color: rgb(255, 255, 255);
+}
+.description span {
+  font-weight: 500;
+  padding: 0 2px;
+
+  background-color: rgb(58, 184, 255);
+
+  font-weight: 700;
+}
+
+.modalContainerOuter {
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 25px 0;
+}
+
+.modalContainerInner {
+  border: 8px solid black;
+  border-radius: 5px;
+}
+@media (max-width: 1020px) {
+  .dialogContainer {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .title {
+    font-size: 28px;
+  }
+  .secondTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .innerContainer {
+    margin: 10px;
+  }
+  .closeBtnContainer {
+    margin: 10px 10px;
+  }
+  .closeBtn {
+    width: 40px;
+    height: 40px;
+  }
+}

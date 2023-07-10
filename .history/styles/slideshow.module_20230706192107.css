@@ -1,0 +1,12 @@
+.container {
+  border: 2px solid rgb(67, 67, 67);
+  border-radius: 10px;
+}
+
+.innerContainer {
+  display: flex;
+}
+.img {
+  width: 820px;
+  border: 10px solid black;
+}

@@ -1,0 +1,13 @@
+.container {
+}
+
+.innerContainer {
+  display: flex;
+}
+.img {
+  width: 780px;
+}
+
+.imgCenter {
+  position: absolute;
+}

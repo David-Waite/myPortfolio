@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+}
+
+.img {
+  width: 780px;
+
+  position: absolute;
+}
+
+.imgCenter {
+  right: 0;
+  animation: moveLeftCenter 2s infinite;
+}
+
+.imgRight {
+  left: 800px;
+  animation: moveLeftRight 2s infinite;
+}
+
+@keyframes moveLeftCenter {
+  0%,
+  80% {
+    right: 0;
+  }
+
+  100% {
+    right: 780px;
+  }
+}
+@keyframes moveLeftRight {
+  0%,
+  80% {
+    left: 780px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}

@@ -1,0 +1,12 @@
+.dialogContainer {
+  background-color: #3ab8ff;
+  border-radius: 55px;
+  position: fixed;
+  margin: auto 0;
+  top: 50%;
+  width: 40px;
+  right: 15px;
+  height: 250px;
+  padding: 15px 0;
+  transform: translate(0%, -50%);
+}

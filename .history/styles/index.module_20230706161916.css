@@ -1,0 +1,10 @@
+.dialogContainer {
+  background-color: white;
+  position: fixed;
+  margin: auto auto;
+  top: 50%;
+  width: 1000px;
+  right: 15px;
+  height: calc(90vh);
+  padding: 15px 0;
+}

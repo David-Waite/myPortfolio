@@ -1,0 +1,30 @@
+import { useState, useEffect } from "react";
+import styles from "../styles/slideshow.module.css";
+export default function SlideShow() {
+  const images = [
+    "/DUMMY/1.png",
+    "/DUMMY/2.png",
+    "/DUMMY/3.png",
+    "/DUMMY/4.png",
+    "/DUMMY/5.png",
+  ];
+
+  const slideElements = images.map((image) => {
+    return (
+      <div key={image} className={styles.slide}>
+        <img className={styles.img} src={image} />
+      </div>
+    );
+  });
+  return (
+    <div className={styles.slideShow}>
+      <div className={styles.slideContainer}></div>
+      {slideElements}
+      <div className={styles.arrowLeft}>❮</div>
+      <div className={styles.arrowRight}>❯</div>
+      <div class="slide-indicators">
+        <div className="slide-indicator active"></div>
+      </div>
+    </div>
+  );
+}

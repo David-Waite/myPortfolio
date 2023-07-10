@@ -1,0 +1,41 @@
+.container {
+  height: 415.27px;
+
+  border: 8px solid black;
+  position: relative;
+  border-radius: 10px;
+}
+.outerContainer {
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.img {
+  width: 780px;
+  position: absolute;
+}
+
+.imageOne {
+  right: -100%;
+  animation: slideShowMove 9s infinite;
+  animation-delay: -5s;
+}
+.imageTwo {
+  right: 0%;
+  animation: slideShowMove 9s infinite;
+}
+
+@keyframes slideShowMove {
+  0%,
+  30% {
+    right: -100%;
+  }
+  45%,
+  85% {
+    right: 0;
+  }
+
+  100% {
+    right: 100%;
+  }
+}

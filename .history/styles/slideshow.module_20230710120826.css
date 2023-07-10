@@ -1,0 +1,29 @@
+.img {
+  width: 780px;
+  position: absolute;
+}
+
+/* .imageOne {
+  right: -100%;
+  animation: slideShowMove 8s infinite;
+  animation-delay: -4s;
+}
+.imageTwo {
+  right: 0%;
+  animation: slideShowMove 8s infinite;
+}
+
+@keyframes slideShowMove {
+  0%,
+  37.5% {
+    right: -100%;
+  }
+  50%,
+  87.5% {
+    right: 0;
+  }
+
+  100% {
+    right: 100%;
+  }
+} */

@@ -1,0 +1,51 @@
+.container {
+  height: 415.27px;
+
+  border: 8px solid black;
+  position: relative;
+  border-radius: 10px;
+}
+.outerContainer {
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.img {
+  width: 780px;
+  position: absolute;
+}
+
+.startingImage {
+  right: 0%;
+  animation: startingImage 5s infinite;
+  z-index: -1;
+}
+@keyframes startingImage {
+  0%,
+  25% {
+    right: 0%;
+  }
+
+  100% {
+    right: 100%;
+  }
+}
+
+.imageTwo {
+  right: -100%;
+  animation: imageTwoLoop 5s infinite;
+}
+
+@keyframes imageTwoLoop {
+  0% {
+    right: -100%;
+  }
+  25%,
+  75% {
+    right: 0%;
+  }
+
+  100% {
+    right: 100%;
+  }
+}

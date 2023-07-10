@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  height: 436px;
+}
+
+.img {
+  height: 100%;
+  width: auto;
+  top: 0;
+  left: 0;
+}
+
+/* .imageOne {
+  right: -100%;
+  animation: slideShowMove 8s infinite;
+  animation-delay: -4s;
+}
+.imageTwo {
+  right: 0%;
+  animation: slideShowMove 8s infinite;
+}
+
+@keyframes slideShowMove {
+  0%,
+  37.5% {
+    right: -100%;
+  }
+  50%,
+  87.5% {
+    right: 0;
+  }
+
+  100% {
+    right: 100%;
+  }
+} */

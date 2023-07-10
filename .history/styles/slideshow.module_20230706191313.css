@@ -1,0 +1,10 @@
+.container {
+  border: 2px solid grey;
+}
+
+.innerContainer {
+  border: 10px solid black;
+}
+.img {
+  width: 100%;
+}

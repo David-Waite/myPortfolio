@@ -1,0 +1,52 @@
+.container {
+  height: 415.27px;
+
+  border: 8px solid black;
+  position: relative;
+  border-radius: 10px;
+}
+.outerContainer {
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.img {
+  width: 780px;
+  position: absolute;
+}
+
+.imgTwo {
+  right: -100%;
+  animation: imageOneLoop 5s infinite;
+}
+
+.imgComingToScreen {
+  left: 100%;
+  animation: imgComingToScreen 5s infinite;
+}
+.imgOffScreen {
+  left: 100%;
+}
+
+@keyframes imageOneLoop {
+  0%,
+  25% {
+    right: 0;
+  }
+
+  75%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes moveLeftRight {
+  0%,
+  70% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}

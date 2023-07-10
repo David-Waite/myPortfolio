@@ -1,0 +1,14 @@
+.container {
+  border: 2px solid rgb(67, 67, 67);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.innerContainer {
+  display: flex;
+  overflow: hidden;
+}
+.img {
+  width: 100%;
+  border: 10px solid black;
+}

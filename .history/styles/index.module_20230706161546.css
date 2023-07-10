@@ -1,0 +1,20 @@
+.dialogContainer {
+  width: 1000px;
+  margin: 20px auto;
+  height: calc(100vh - 40px);
+  z-index: 2;
+  border: none;
+  position: sticky;
+  top: 20px;
+}
+.outerContainter {
+  position: absolute;
+}
+
+.box {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  position: sticky;
+  top: 20px;
+}
