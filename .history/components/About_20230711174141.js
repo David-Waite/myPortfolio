@@ -33,7 +33,7 @@ export default function About() {
           </h2>
           <div className={styles.techCon}>
             <img src="/JsIcon.png" alt="" />
-            <img src="/cicon.png" alt="" />
+            <img src="/C#icon.png" alt="" />
             <br />
             <img src="/React-icon.png" alt="" />
             <img src="/nextJsIcon.png" alt="" />

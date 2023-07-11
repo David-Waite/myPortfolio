@@ -21,12 +21,7 @@ export default function ScrollBar(props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const [width, setWidth] = React.useState(999);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setWidth(window.innerWidth), 1;
-    });
-  });
+
   React.useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth);
@@ -45,12 +40,10 @@ export default function ScrollBar(props) {
   }, []);
 
   function scroll(position) {
-   
-      window.scrollTo({
-        top: position,
-        behavior: "smooth",
-      
-    }
+    window.scrollTo({
+      top: position,
+      behavior: "smooth",
+    });
   }
 
   return (
