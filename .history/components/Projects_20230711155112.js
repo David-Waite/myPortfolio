@@ -20,7 +20,6 @@ export default function About({ projects }) {
     } else {
       window.scrollTo({
         top: height * 2,
-        behavior: "smooth",
       });
     }
 

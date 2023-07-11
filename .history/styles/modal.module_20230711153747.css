@@ -12,22 +12,7 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   overflow-y: auto;
-}
-
-.dialogContainer::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 10px;
-}
-
-.dialogContainer::-webkit-scrollbar-track {
-  border-radius: 10px;
-  margin: 0px 0;
-}
-
-.dialogContainer::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
-  border-radius: 3px;
+  padding: 50px;
 }
 
 .dialogContainer::backdrop {
@@ -35,7 +20,7 @@
 }
 
 .innerContainer {
-  margin: 0px 40px 40px;
+  margin: 20px 40px;
 }
 
 .closeBtnContainer {

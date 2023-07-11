@@ -7,20 +7,18 @@ export default function About({ projects }) {
   const [modalState, setModalState] = useState(false);
   const [modalItem, setModalItem] = useState();
 
-  const [height, setHeight] = useState(999);
+  const [height, setHeight] = React.useState(999);
   useEffect(() => {
     setTimeout(() => {
       setHeight(window.innerHeight), 1;
     });
   });
-
   function modalHandler(action, item) {
     if (action) {
       setModalItem(item);
     } else {
       window.scrollTo({
         top: height * 2,
-        behavior: "smooth",
       });
     }
 

@@ -1,25 +1,18 @@
 import styles from "../styles/projects.module.css";
 import Link from "next/link";
 import Modal from "./Modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function About({ projects }) {
   const [modalState, setModalState] = useState(false);
   const [modalItem, setModalItem] = useState();
-
-  const [height, setHeight] = useState(999);
-  useEffect(() => {
-    setTimeout(() => {
-      setHeight(window.innerHeight), 1;
-    });
-  });
 
   function modalHandler(action, item) {
     if (action) {
       setModalItem(item);
     } else {
       window.scrollTo({
-        top: height * 2,
+        top: 50,
         behavior: "smooth",
       });
     }

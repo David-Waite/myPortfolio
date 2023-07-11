@@ -27,7 +27,7 @@
 .dialogContainer::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .dialogContainer::backdrop {
