@@ -27,6 +27,7 @@ export default function About({ projects }) {
     setModalState(action);
   }
 
+  console.log(projects[0].fields.isGitHub);
   const projectCardsElement = projects.map((item) => {
     return (
       <div key={item.sys.id} className={styles.projectsCard}>
@@ -46,7 +47,9 @@ export default function About({ projects }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button>View Website</button>
+              <button>
+                {item.fields.isGitHub ? "View on GitHub" : "View Website"}
+              </button>
             </a>
             <button onClick={() => modalHandler(true, item)}>View about</button>
           </div>

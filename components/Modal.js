@@ -35,7 +35,7 @@ export default function Modal({ modalState, item, onClick }) {
         <div className={styles.madeWithContainer}>
           <div>{madeWithElements}</div>
           <a className={styles.link} href={item.fields.websiteUrl}>
-            Vist Website
+            {item.fields.isGitHub ? "View on GitHub" : "View Website"}
           </a>
         </div>
 

@@ -7,6 +7,11 @@ export default function SlideShow(props) {
   for (let i = 0; i < props.images.length; i++) {
     images.push(props.images[i].fields.file.url);
   }
+
+  function resetSlideShow() {
+    slideContainerRef.current.scrollLeft = 0;
+  }
+
   const slideContainerRef = useRef(null);
   const [hideLeft, setHideLeft] = useState("none");
   const [hideRight, setHideRight] = useState("");
@@ -18,7 +23,8 @@ export default function SlideShow(props) {
   }
 
   function handleScroll() {
-    const totalLength = slideContainerRef.current.children[0].clientWidth * 4;
+    const totalLength =
+      slideContainerRef.current.children[0].clientWidth * (images.length - 1);
 
     if (slideContainerRef.current.scrollLeft === 0) {
       setHideLeft("none");
@@ -44,6 +50,10 @@ export default function SlideShow(props) {
       </div>
     );
   });
+
+  useEffect(() => {
+    resetSlideShow();
+  }, [props]);
 
   return (
     <div className={styles.carousel}>
