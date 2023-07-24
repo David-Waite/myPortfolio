@@ -73,7 +73,7 @@ export default function About() {
                   ) : formData.name ? (
                     ""
                   ) : (
-                    <span>John Doe?</span>
+                    <span>Be nice if this wasn&apos;t blank</span>
                   )}
                 </label>
                 <input
@@ -135,7 +135,7 @@ export default function About() {
           </form>
         </div>
       </div>
-      <p className={styles.abn}>ABN: 83 626 560 303</p>
+      <p>ABN: 83 626 560 303</p>
     </div>
   );
 }

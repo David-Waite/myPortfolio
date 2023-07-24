@@ -43,12 +43,6 @@ export default function Landing() {
               rel="noopener noreferrer"
             >
               <Github />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/davidwaitedev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
               <Linkedin />
             </a>
           </div>

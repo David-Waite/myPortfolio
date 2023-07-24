@@ -11,8 +11,11 @@
   height: 100vh;
 }
 
+.icons {
+  display: flex;
+  gap: 24px;
+}
 .icons > * {
-  margin-right: 8px;
   font-size: 20px;
   color: white;
 }

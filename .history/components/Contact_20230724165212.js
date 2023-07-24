@@ -73,7 +73,7 @@ export default function About() {
                   ) : formData.name ? (
                     ""
                   ) : (
-                    <span>John Doe?</span>
+                    <span>Be nice if this wasn&apos;t blank</span>
                   )}
                 </label>
                 <input

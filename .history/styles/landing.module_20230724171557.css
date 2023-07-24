@@ -11,8 +11,10 @@
   height: 100vh;
 }
 
+.icons {
+  display: flex;
+}
 .icons > * {
-  margin-right: 8px;
   font-size: 20px;
   color: white;
 }
